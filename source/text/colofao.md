@@ -16,7 +16,7 @@ Scan: Brasiliana Digital, Biblioteca Brasiliana Guita e José Mindlin (USP), ace
 
 A transcrição foi collacionada contra esse scan. A ortografia da edição foi conservada.
 
-As gravuras de cabeçalho foram recortadas do scan e depois coloridas por modelo, no molde da cromolitografia da capa de 1904. O traço de partida é o da edição; a cor é intervenção desta edição digital. *A Coragem* e *A Patria* ficaram no recorte do scan, sem cor. O PDF da BBM está comprimido (~150 dpi).
+As gravuras de cabeçalho foram recortadas do scan e depois coloridas, no molde da cromolitografia da capa de 1904. O traço de partida é o da edição; a cor é intervenção desta edição. *A Coragem* e *A Patria* ficaram no recorte, sem cor. *Os mezes* (bandeirinhas) e *Inverno* ainda mostram o dano do scan (~150 dpi).
 
 O ilustrador assina **HM** em várias pranchas. O nome completo ainda não foi identificado.
 
