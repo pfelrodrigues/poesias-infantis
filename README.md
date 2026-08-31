@@ -14,11 +14,14 @@ Arquivos: `002924_c_COMPLETO.pdf` (cor) e `002924_COMPLETO.pdf` (preto e branco)
 
 ## Como ler
 
+- **No navegador:** <https://pfelrodrigues.github.io/poesias-infantis/>
+- **EPUB:** [Release mais recente](https://github.com/pfelrodrigues/poesias-infantis/releases/latest)
+
 ```bash
 make book
 ```
 
-Abre `site/index.html`. O EPUB fica em `build/poesias-infantis.epub`.
+Gera `site/index.html` e `build/poesias-infantis.epub` na máquina.
 
 ## Arquivos no git
 

@@ -108,6 +108,7 @@ def main() -> None:
             shutil.copy2(img, BUILD / img.name)
             shutil.copy2(img, SITE / img.name)
     shutil.copy2(CSS, SITE / "book.css")
+    (SITE / ".nojekyll").touch()
     capa = BUILD / "capa.png"
     html_extra = [
         "--standalone",
