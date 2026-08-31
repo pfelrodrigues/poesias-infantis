@@ -13,7 +13,13 @@ license_work: public-domain
 license_remaster: CC0-1.0
 sources:
   scan:
-    name: Biblioteca Brasiliana Guita e José Mindlin
+    catalog: >
+      Bilac, Olavo, 1865-1918. Poesias infantis. Rio de Janeiro:
+      Livraria Clássica de Francisco Alves, 1904. 127 p., 1 p. s.n.
+      índice; il.; 20,1 x 13,4 cm. Português. Livro. Domínio público.
+    portal: Brasiliana Digital
+    acervo: Biblioteca Brasiliana Guita e José Mindlin
+    collection: Livros
     url: https://digital.bbm.usp.br/handle/bbm/4694
     handle: bbm/4694
     files:

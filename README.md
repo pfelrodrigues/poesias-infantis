@@ -4,13 +4,13 @@ Remaster da primeira edição. Texto collacionado contra o scan de 1904. Gravura
 
 Obra em domínio público. Trabalho deste repositório em [CC0](LICENSE).
 
-## Fonte
+## Fonte (ficha)
 
-O scan usado neste remaster foi baixado da Biblioteca Brasiliana Guita e José Mindlin (USP):
+Bilac, Olavo, 1865-1918. *Poesias infantis*. Rio de Janeiro: Livraria Clássica de Francisco Alves, 1904. 127 p., 1 p. s.n. índice; il.; 20,1 × 13,4 cm. Língua: português. Tipo: livro. Direitos na ficha: domínio público.
 
-**[digital.bbm.usp.br/handle/bbm/4694](https://digital.bbm.usp.br/handle/bbm/4694)**
+Scan: **Brasiliana Digital**, Biblioteca Brasiliana Guita e José Mindlin (USP), acervo **Livros**. [digital.bbm.usp.br/handle/bbm/4694](https://digital.bbm.usp.br/handle/bbm/4694). Arquivos `002924_c_COMPLETO.pdf` (cor) e `002924_COMPLETO.pdf` (preto e branco).
 
-Arquivos: `002924_c_COMPLETO.pdf` (cor) e `002924_COMPLETO.pdf` (preto e branco). A BBM marca o item como domínio público. Esta edição não substitui o fac-símile deles.
+Esta edição transcreve o texto e recorta gravuras a partir desse scan. Não substitui o fac-símile da Brasiliana.
 
 ## Como ler
 

@@ -6,9 +6,15 @@ status: draft
 
 # Colofão
 
-Texto e gravuras da edição de 1904 de *Poesias infantis*, de Olavo Bilac (Rio de Janeiro, Livraria Clássica de Francisco Alves & Cia). Obra em domínio público.
+Texto e gravuras da edição de 1904. Obra em domínio público.
 
-O scan de trabalho foi baixado da Biblioteca Brasiliana Guita e José Mindlin (USP), item [bbm/4694](https://digital.bbm.usp.br/handle/bbm/4694), arquivos `002924_c_COMPLETO.pdf` e `002924_COMPLETO.pdf`. A transcrição foi collacionada contra esse scan. A ortografia da edição foi conservada.
+**Ficha do exemplar digitalizado**
+
+Bilac, Olavo, 1865-1918. *Poesias infantis*. Rio de Janeiro: Livraria Clássica de Francisco Alves, 1904. 127 p., 1 p. s.n. índice; il.; 20,1 × 13,4 cm. Português. Livro. Direitos na ficha: domínio público.
+
+Scan: Brasiliana Digital, Biblioteca Brasiliana Guita e José Mindlin (USP), acervo Livros. [https://digital.bbm.usp.br/handle/bbm/4694](https://digital.bbm.usp.br/handle/bbm/4694). Arquivos `002924_c_COMPLETO.pdf` e `002924_COMPLETO.pdf`.
+
+A transcrição foi collacionada contra esse scan. A ortografia da edição foi conservada.
 
 As gravuras foram recortadas do raster do PDF. Não foram redesenhadas. O PDF da BBM está comprimido (~150 dpi); esta não é uma edição em alta resolução.
 
