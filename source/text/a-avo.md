@@ -15,7 +15,7 @@ figures:
 
 # A Avó
 
-![](../images/restored/avo-cabecalho.png){alt="Avó recostada numa poltrona à esquerda, de vestido claro; mesa ao fundo com vaso e livros; uma menina junto à porta; duas crianças brincam à direita, uma de chapéu. Litografia da edição de 1904. Iniciais HM à direita, no original."}
+![](../images/restored/a-avo.png){alt="Avó recostada numa poltrona à esquerda, de vestido claro; mesa ao fundo com vaso e livros; uma menina junto à porta; duas crianças brincam à direita, uma de chapéu. Litografia da edição de 1904. Iniciais HM à direita, no original."}
 
 | A avó, que tem oitenta annos,
 | Está tão fraca e velhinha!..

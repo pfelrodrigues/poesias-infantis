@@ -6,4 +6,5 @@ build/
 site/
 source/scans/
 source/images/pages/
+source/facsimile/ocr-dump.txt
 .mise.toml.local

@@ -1,6 +1,6 @@
 # Poesias infantis (Olavo Bilac, 1904)
 
-Remaster da primeira edição. Texto collacionado contra o scan de 1904. Gravuras restauradas, não redesenhadas.
+Remaster da primeira edição. Texto collacionado contra o scan de 1904. Gravuras recortadas, não redesenhadas.
 
 Obra em domínio público. Trabalho deste repositório em [CC0](LICENSE).
 
@@ -8,31 +8,29 @@ Scan de origem: [Biblioteca Brasiliana Mindlin, bbm/4694](https://digital.bbm.us
 
 ## Como ler
 
-Ainda não há release. O piloto é o poema *A Avó*:
-
 ```bash
-mise exec -- just html   # site/index.html
-mise exec -- just epub   # build/poesias-infantis.epub
+make book
 ```
+
+Abre `site/index.html`. O EPUB fica em `build/poesias-infantis.epub`.
 
 ## Fonte
 
 | Caminho | O que é |
 |---|---|
 | `source/book.yml` | Metadados da edição |
+| `scripts/pieces.py` | Inventário: títulos, páginas, recortes |
 | `source/text/` | Um Markdown por peça, ortografia de 1904 |
-| `source/images/extracted/` | Recortes crus do PDF |
+| `source/images/extracted/` | Recortes crus |
 | `source/images/restored/` | Gravuras usadas no ebook |
 | `source/scans/` | PDFs da BBM (fora do git) |
-
-Estado da colação no front matter: `draft` → `collated` → `proofed`.
 
 ## Princípios
 
 - Texto da edição de 1904. Sem reforma ortográfica no canônico.
 - Transcrição a partir do scan. Wikisource é apoio, não fonte.
-- Gravura: recortar, endireitar, corrigir cor. Não redesenhar o traço.
-- Git guarda a fonte. EPUB, PDF e AZW3 saem do build.
+- Gravura: recortar. Não redesenhar o traço. Não branquear o papel.
+- Git guarda a fonte. EPUB e HTML saem do `make book`.
 
 ## Licença
 

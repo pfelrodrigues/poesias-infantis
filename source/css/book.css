@@ -56,23 +56,48 @@ header.site .work {
   margin: 0.2rem 0 2rem;
 }
 
-article img {
+main img {
   display: block;
   width: 100%;
   height: auto;
   margin: 1.5rem 0 1rem;
 }
 
-article h1 {
+article h1,
+main h1 {
   text-align: center;
   font-variant: small-caps;
   letter-spacing: 0.08em;
   font-size: 1.4rem;
-  margin: 0.5rem 0 1.5rem;
+  margin: 2.5rem 0 1.25rem;
 }
 
-article p,
-article div.line-block {
+main h2 {
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem;
+}
+
+nav#TOC {
+  margin: 0 0 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #d8cbb3;
+}
+
+nav#TOC ul {
+  list-style: none;
+  padding: 0;
+  columns: 2;
+  gap: 1.5rem;
+}
+
+nav#TOC a {
+  color: var(--ink);
+}
+
+main p,
+main div.line-block {
   margin: 0 0 1.25rem;
 }
 

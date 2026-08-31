@@ -9,9 +9,15 @@
 <body>
   <a class="skip" href="#texto">Ir para o texto</a>
   <header class="site">
-    <p>Olavo Bilac · 1904 · remaster piloto</p>
+    <p>Olavo Bilac · 1904</p>
     <p class="work">Poesias infantis</p>
   </header>
+$if(toc)$
+  <nav id="TOC" role="doc-toc">
+    <h2>Indice</h2>
+    $toc$
+  </nav>
+$endif$
   <main id="texto">
 $body$
   </main>
