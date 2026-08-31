@@ -4,7 +4,13 @@ Remaster da primeira edição. Texto collacionado contra o scan de 1904. Gravura
 
 Obra em domínio público. Trabalho deste repositório em [CC0](LICENSE).
 
-Scan de origem: [Biblioteca Brasiliana Mindlin, bbm/4694](https://digital.bbm.usp.br/handle/bbm/4694).
+## Fonte
+
+O scan usado neste remaster foi baixado da Biblioteca Brasiliana Guita e José Mindlin (USP):
+
+**[digital.bbm.usp.br/handle/bbm/4694](https://digital.bbm.usp.br/handle/bbm/4694)**
+
+Arquivos: `002924_c_COMPLETO.pdf` (cor) e `002924_COMPLETO.pdf` (preto e branco). A BBM marca o item como domínio público. Esta edição não substitui o fac-símile deles.
 
 ## Como ler
 
@@ -14,7 +20,7 @@ make book
 
 Abre `site/index.html`. O EPUB fica em `build/poesias-infantis.epub`.
 
-## Fonte
+## Arquivos no git
 
 | Caminho | O que é |
 |---|---|
