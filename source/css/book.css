@@ -1,0 +1,89 @@
+:root {
+  --paper: #f8f1e0;
+  --ink: #1c1610;
+  --muted: #5a4e40;
+  --accent: #6b3a1f;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 42rem;
+  padding: 2rem 1.25rem 4rem;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Iowan Old Style", Palatino, "Palatino Linotype", "Times New Roman", serif;
+  font-size: 1.15rem;
+  line-height: 1.55;
+}
+
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.5rem 1rem;
+}
+
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 1;
+}
+
+a:focus-visible,
+button:focus-visible,
+.skip:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+header.site p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+header.site .work {
+  color: var(--ink);
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin: 0.2rem 0 2rem;
+}
+
+article img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 1.5rem 0 1rem;
+}
+
+article h1 {
+  text-align: center;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 1.4rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+article p,
+article div.line-block {
+  margin: 0 0 1.25rem;
+}
+
+article div.line-block {
+  text-align: center;
+}
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #d8cbb3;
+  color: var(--muted);
+  font-size: 0.95rem;
+}

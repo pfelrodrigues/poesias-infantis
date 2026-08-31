@@ -1,0 +1,34 @@
+title: Poesias infantis
+title_page: Poesias infantís
+author: Olavo Bilac
+author_full: Olavo Brás Martins dos Guimarães Bilac
+author_dates: 1865–1918
+publisher: Livraria Clássica de Francisco Alves & Cia
+place: Rio de Janeiro
+year: 1904
+language: pt
+pages_printed: 127
+size_cm: [20.1, 13.4]
+license_work: public-domain
+license_remaster: CC0-1.0
+sources:
+  scan:
+    name: Biblioteca Brasiliana Guita e José Mindlin
+    url: https://digital.bbm.usp.br/handle/bbm/4694
+    handle: bbm/4694
+    files:
+      color: 002924_c_COMPLETO.pdf
+      bw: 002924_COMPLETO.pdf
+  commons: https://commons.wikimedia.org/wiki/File:Poesias_Infantis_(1904).pdf
+  wikidata: Q19555432
+illustrator_mark: HM
+illustrator_note: >
+  Iniciais HM à direita do título em A Avó (p. 7). Nome completo ainda
+  não identificado.
+pilot:
+  id: a-avo
+  title: A Avó
+  page: 7
+note: >
+  Exemplar digitalizado traz dedicatória manuscrita a Almerinda Martins
+  (agosto de 1904). Isso é do volume físico, não da edição.

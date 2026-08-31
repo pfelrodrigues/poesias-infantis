@@ -1,0 +1,22 @@
+[tools]
+python = "3.12"
+uv = "latest"
+
+[env]
+_.python.venv = { path = ".venv", create = true }
+
+[tasks.extract]
+description = "Rasteriza páginas do PDF colorido para source/images/pages"
+run = "uv run python scripts/extract_pages.py"
+
+[tasks.restore-pilot]
+description = "Restaura a gravura-piloto de A Avó"
+run = "uv run python scripts/restore_pilot.py"
+
+[tasks.html]
+description = "Gera site/index.html do piloto"
+run = "make html"
+
+[tasks.epub]
+description = "Gera build/poesias-infantis.epub do piloto"
+run = "make epub"

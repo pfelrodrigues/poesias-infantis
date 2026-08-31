@@ -1,0 +1,13 @@
+# Página do PDF colorido → página impressa 1904 → peça.
+# Índice 1 no PDF. Capa = 1.
+- pdf: 9
+  printed: 7
+  piece: a-avo
+  figures: [avo-cabecalho]
+- pdf: 10
+  printed: 8
+  piece: a-avo
+- pdf: 11
+  printed: 9
+  piece: a-avo
+  ornament: fleuron
