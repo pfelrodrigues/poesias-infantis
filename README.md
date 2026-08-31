@@ -38,7 +38,7 @@ Gera `site/index.html` e `build/poesias-infantis.epub` na máquina.
 
 - Texto da edição de 1904. Sem reforma ortográfica no canônico.
 - Transcrição a partir do scan. Wikisource é apoio, não fonte.
-- Gravura: recortar. Não redesenhar o traço. Não branquear o papel.
+- Gravura: recortar do scan. Cor das aberturas é intervenção desta edição, declarada no colofão.
 - Git guarda a fonte. EPUB e HTML saem do `make book`.
 
 ## Licença

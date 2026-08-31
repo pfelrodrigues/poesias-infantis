@@ -13,7 +13,6 @@ from pieces import PIECES
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = ROOT / "source" / "images" / "pages"
 EXTRACTED = ROOT / "source" / "images" / "extracted"
-RESTORED = ROOT / "source" / "images" / "restored"
 
 
 def crop_box(img: Image.Image, frac: tuple[float, float, float, float]) -> Image.Image:
@@ -24,10 +23,8 @@ def crop_box(img: Image.Image, frac: tuple[float, float, float, float]) -> Image
 
 def save_pair(src: Image.Image, stem: str) -> None:
     EXTRACTED.mkdir(parents=True, exist_ok=True)
-    RESTORED.mkdir(parents=True, exist_ok=True)
     rgb = src.convert("RGB")
     rgb.save(EXTRACTED / f"{stem}.png")
-    rgb.save(RESTORED / f"{stem}.png")
     print(f"{stem} {rgb.size}")
 
 

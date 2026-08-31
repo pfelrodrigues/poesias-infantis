@@ -8,7 +8,7 @@ extract:
 crop: extract
 	uv run python scripts/crop_headers.py
 
-book: crop
+book:
 	uv run python scripts/build_book.py
 
 html: book
