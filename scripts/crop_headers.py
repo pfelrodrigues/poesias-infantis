@@ -8,7 +8,7 @@ from pathlib import Path
 from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from pieces import PIECES
+from pieces import BOOK, PIECES
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = ROOT / "source" / "images" / "pages"
@@ -31,15 +31,10 @@ def save_pair(src: Image.Image, stem: str) -> None:
 def crop_cover() -> None:
     page = Image.open(PAGES / "p001.png")
     # Corta a lombada vermelha à esquerda.
-    save_pair(crop_box(page, (0.035, 0.0, 1.0, 1.0)), "capa")
+    save_pair(crop_box(page, BOOK["facsimile"]["cover_crop"]), "capa")
 
 
-EXTRA_CROPS = [
-    ("as-estacoes-inverno", 33, (0.06, 0.02, 0.96, 0.38)),
-    ("as-estacoes-primavera", 35, (0.06, 0.02, 0.96, 0.38)),
-    ("as-estacoes-verao", 37, (0.06, 0.02, 0.96, 0.38)),
-    ("as-estacoes-outono", 39, (0.06, 0.02, 0.96, 0.40)),
-]
+EXTRA_CROPS = BOOK["facsimile"]["extra_crops"]
 
 
 def crop_piece(piece: dict) -> None:
@@ -62,7 +57,8 @@ def main() -> None:
         if only and piece["id"] not in only:
             continue
         crop_piece(piece)
-    for stem, pdf, frac in EXTRA_CROPS:
+    for extra in EXTRA_CROPS:
+        stem, pdf, frac = extra["id"], extra["pdf"], extra["crop"]
         if only and stem not in only:
             continue
         path = PAGES / f"p{pdf:03d}.png"
