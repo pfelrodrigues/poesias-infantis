@@ -5,11 +5,12 @@ from __future__ import annotations
 import re
 import shutil
 import subprocess
-from pathlib import Path
 import sys
+from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from pieces import PIECES
+from export_book import Book
+from pieces import BOOK, PIECES
 
 ROOT = Path(__file__).resolve().parents[1]
 TEXT = ROOT / "source" / "text"
@@ -19,7 +20,7 @@ SITE = ROOT / "site"
 CSS = ROOT / "source" / "css" / "book.css"
 TEMPLATE = ROOT / "source" / "templates" / "html.html"
 
-FRONT_RE = re.compile(r"^---\n.*?\n---\n", re.S)
+FRONT_RE = re.compile(r"^---\n.*?\n---\n", re.DOTALL)
 
 
 def body_of(md: Path) -> str:
@@ -45,7 +46,11 @@ def assemble() -> tuple[str, list[Path]]:
             continue
         fig = RESTORED / f"{piece['id']}.png"
         block = body_of(md)
-        if fig.exists() and f"]({fig.name})" not in block and f"](../images/restored/{fig.name})" not in block:
+        if (
+            fig.exists()
+            and f"]({fig.name})" not in block
+            and f"](../images/restored/{fig.name})" not in block
+        ):
             # A imagem já entra pelo markdown da peça, se houver.
             pass
         if fig.exists():
@@ -78,11 +83,11 @@ def run_pandoc(src: Path, fmt: str, extra: list[str], out: Path) -> None:
         "--resource-path",
         str(BUILD),
         "--metadata",
-        "title=Poesias infantis",
+        f"title={BOOK['title']}",
         "--metadata",
-        "author=Olavo Bilac",
+        f"author={BOOK['author']}",
         "--metadata",
-        "lang=pt",
+        f"lang={BOOK['language']}",
         "--toc",
         "--toc-depth=1",
         "--output",
@@ -93,6 +98,9 @@ def run_pandoc(src: Path, fmt: str, extra: list[str], out: Path) -> None:
 
 
 def main() -> None:
+    # The legacy Pages build uses the same strict manifest policy as export.
+    # Validate before touching the previously generated edition.
+    Book(ROOT / "source" / "book.yml")
     BUILD.mkdir(parents=True, exist_ok=True)
     SITE.mkdir(parents=True, exist_ok=True)
     text, images = assemble()

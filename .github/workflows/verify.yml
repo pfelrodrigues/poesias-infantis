@@ -1,0 +1,43 @@
+name: verify-book
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.13"
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.11.21"
+      - uses: r-lib/actions/setup-pandoc@v2
+        with:
+          pandoc-version: "3.7.0.2"
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - name: Verify source, policy, text parity and legacy build
+        run: |
+          make test
+          make book
+          make export OUTPUT=build/distribution
+      - name: Validate EPUB with EPUBCheck 5.3.0
+        run: |
+          curl --fail --location --retry 2 --output build/epubcheck.zip https://github.com/w3c/epubcheck/releases/download/v5.3.0/epubcheck-5.3.0.zip
+          echo '6c07e68584b2e2ce2f89fe06e1246dfead3eb36b46b340e7d93524f29dcff6c5  build/epubcheck.zip' | sha256sum --check
+          unzip -q build/epubcheck.zip -d build
+          java -jar build/epubcheck-5.3.0/epubcheck.jar build/distribution/poesias-infantis.epub
+      - uses: actions/upload-artifact@v4
+        with:
+          name: poesias-infantis-verified-distribution
+          path: build/distribution
+          if-no-files-found: error
