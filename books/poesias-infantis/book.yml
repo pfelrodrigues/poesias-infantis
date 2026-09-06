@@ -44,7 +44,7 @@ id: poesias-infantis
 version: 0.2.0
 license: CC0-1.0
 source_url: https://digital.bbm.usp.br/handle/bbm/4694
-repository_url: https://github.com/pfelrodrigues/poesias-infantis
+repository_url: https://github.com/pfelrodrigues/books
 policy:
   original_statuses:
   - collated

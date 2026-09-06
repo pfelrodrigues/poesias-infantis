@@ -1,4 +1,4 @@
-"""Compatibility inventory for scan tools; book data lives in source/book.yml."""
+"""Compatibility inventory for scan tools; book data lives in book.yml."""
 
 from pathlib import Path
 from typing import Any
@@ -6,7 +6,7 @@ from typing import Any
 import yaml
 
 BOOK: dict[str, Any] = yaml.safe_load(
-    (Path(__file__).resolve().parents[1] / "source/book.yml").read_text(
+    (Path(__file__).resolve().parents[1] / "book.yml").read_text(
         encoding="utf-8"
     )
 )

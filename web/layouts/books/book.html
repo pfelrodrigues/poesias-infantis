@@ -1,0 +1,45 @@
+{{ define "main" }}
+{{ $page := . }}
+{{ $book := index hugo.Data.books .Params.bookID }}
+{{ with $book }}
+<div class="body">
+  <p class="back"><a href="{{ if eq $page.Site.Language.Lang "en" }}/en/{{ else }}/{{ end }}">Paulo Felipe Rodrigues</a> / <a href="{{ "books/" | relLangURL }}">{{ i18n "books_lower" }}</a></p>
+  <h1 class="name" lang="{{ .language }}">{{ .title }}</h1>
+  <p class="tagline">{{ .author }}{{ with .year }} · {{ . }}{{ end }}</p>
+</div>
+<h2>{{ i18n "books_edition" }}</h2>
+<div class="body"><div class="detail-intro">
+  {{ with .cover }}<a class="image-link detail-cover" href="{{ partial "books/asset.html" (dict "book" $book "src" .src) }}" aria-label="{{ i18n "books_enlarge_cover" }}"><img class="cover" src="{{ partial "books/asset.html" (dict "book" $book "src" .src) }}" width="{{ .width }}" height="{{ .height }}" alt="{{ $page.Params.coverAlt | default .alt }}"></a>{{ end }}
+  <div>{{ $page.Content }}
+    {{ with $page.Params.editionNote }}<p class="dim">{{ . }}</p>{{ end }}
+    <div class="book-actions">
+      {{ with index .pieces 0 }}<a href="{{ partial "books/path.html" (dict "page" $page "bookID" $book.id "reader" true "pieceID" .id) }}">{{ i18n "books_start" }}</a>{{ end }}
+      {{ with .epub }}<a href="{{ partial "books/asset.html" (dict "book" $book "src" .) }}" download>{{ i18n "books_download" }}</a>{{ end }}
+      {{ partial "books/resume.html" (dict "page" $page "book" $book) }}
+    </div>
+  </div>
+</div></div>
+<h2>{{ i18n "books_details" }}</h2>
+<div class="body"><dl class="book-facts">
+  <dt>{{ i18n "books_author" }}</dt><dd>{{ .author }}</dd>
+  {{ if or .place .year }}<dt>{{ i18n "books_original_edition" }}</dt><dd>{{ .place }}{{ if and .place .year }}, {{ end }}{{ .year }}</dd>{{ end }}
+  {{ with .publisher }}<dt>{{ i18n "books_publisher" }}</dt><dd>{{ . }}</dd>{{ end }}
+  <dt>{{ i18n "books_language" }}</dt><dd>{{ $page.Params.languageLabel | default .language }}</dd>
+  {{ with .source_url }}<dt>{{ i18n "books_source" }}</dt><dd><a href="{{ . }}">{{ $page.Params.sourceLabel | default (i18n "books_original_copy") }}</a></dd>{{ end }}
+  {{ with .repository_url }}<dt>{{ i18n "codigo" }}</dt><dd><a href="{{ . }}">{{ i18n "books_source_process" }}</a></dd>{{ end }}
+</dl></div>
+{{ with .comparison }}
+<h2>{{ i18n "books_illustrations" }}</h2>
+<div class="body">
+  {{ with $page.Params.comparisonNote }}<p class="note">{{ . }}</p>{{ end }}
+  <div class="compare">
+    {{ with .original }}<figure><a class="image-link" href="{{ partial "books/asset.html" (dict "book" $book "src" .src) }}" aria-label="{{ i18n "books_enlarge_original" }}"><img src="{{ partial "books/asset.html" (dict "book" $book "src" .src) }}" width="{{ .width }}" height="{{ .height }}" loading="lazy" alt="{{ $page.Params.comparisonOriginalAlt | default (i18n "books_original_scan") }}"></a><figcaption>{{ i18n "books_original_scan" }}</figcaption></figure>{{ end }}
+    {{ with .restored }}<figure><a class="image-link" href="{{ partial "books/asset.html" (dict "book" $book "src" .src) }}" aria-label="{{ i18n "books_enlarge_restored" }}"><img src="{{ partial "books/asset.html" (dict "book" $book "src" .src) }}" width="{{ .width }}" height="{{ .height }}" loading="lazy" alt="{{ $page.Params.comparisonRestoredAlt | default (i18n "books_colorized") }}"></a><figcaption>{{ i18n "books_colorized" }}</figcaption></figure>{{ end }}
+  </div>
+  <p class="edition-note">{{ i18n "books_image_hint" }}</p>
+</div>
+{{ end }}
+<h2 id="contents">{{ i18n "books_contents" }}</h2>
+<div class="body">{{ partial "books/contents.html" (dict "page" $page "book" $book) }}</div>
+{{ end }}
+{{ end }}

@@ -11,9 +11,9 @@ from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGE = ROOT / "source" / "images" / "pages" / "p009.png"
-EXTRACTED = ROOT / "source" / "images" / "extracted" / "avo-cabecalho.png"
-RESTORED = ROOT / "source" / "images" / "restored" / "avo-cabecalho.png"
+PAGE = ROOT / "images" / "pages" / "p009.png"
+EXTRACTED = ROOT / "images" / "extracted" / "avo-cabecalho.png"
+RESTORED = ROOT / "images" / "restored" / "avo-cabecalho.png"
 
 # Fração da página 9: o desenho. O título tipográfico fica de fora.
 CROP_FRAC = (0.07, 0.02, 0.95, 0.395)

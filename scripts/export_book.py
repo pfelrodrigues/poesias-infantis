@@ -550,7 +550,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument(
         "--source",
         type=Path,
-        default=ROOT / "source/book.yml",
+        required=True,
         help="Source manifest, or its directory",
     )
     parser.add_argument(

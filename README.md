@@ -1,76 +1,66 @@
-# Poesias infantis (Olavo Bilac, 1904)
+# Books
 
-Remaster da primeira edição. Texto collacionado contra o scan de 1904. Gravuras recortadas, não redesenhadas.
+Coleção de livros antigos remasterizados para leitura no navegador e em EPUB.
+Biblioteca, leitor, fontes editoriais e geradores ficam neste repositório.
 
-Obra em domínio público. Trabalho deste repositório em [CC0](LICENSE).
+O endereço público previsto é [pfelrodrigues.com.br/books/](https://pfelrodrigues.com.br/books/).
+A interface e as apresentações têm versões PT/BR e EN. Os textos originais permanecem no idioma e na grafia da edição.
 
-## Fonte (ficha)
+## Obras
 
-Bilac, Olavo, 1865-1918. *Poesias infantis*. Rio de Janeiro: Livraria Clássica de Francisco Alves, 1904. 127 p., 1 p. s.n. índice; il.; 20,1 × 13,4 cm. Língua: português. Tipo: livro. Direitos na ficha: domínio público.
+- [Poesias infantis, Olavo Bilac, 1904](books/poesias-infantis/README.md). Contém 38 peças originais e um colofão editorial.
 
-Scan: **Brasiliana Digital**, Biblioteca Brasiliana Guita e José Mindlin (USP), acervo **Livros**. [digital.bbm.usp.br/handle/bbm/4694](https://digital.bbm.usp.br/handle/bbm/4694). Arquivos `002924_c_COMPLETO.pdf` (cor) e `002924_COMPLETO.pdf` (preto e branco).
+## Organização
 
-Esta edição transcreve o texto e recorta gravuras a partir desse scan. Não substitui o fac-símile da Brasiliana.
-
-## Como ler
-
-- **No navegador:** <https://pfelrodrigues.github.io/poesias-infantis/>
-- **EPUB:** [Release mais recente](https://github.com/pfelrodrigues/poesias-infantis/releases/latest)
-
-```bash
-make book
+```text
+books/
+  poesias-infantis/
+    book.yml                 metadados, ordem, política e hashes
+    presentation.pt.md       apresentação em português
+    presentation.en.md       apresentação em inglês
+    text/                    textos da edição
+    images/                  mestres e recortes
+    css/                     estilo do EPUB
+    tools/                   ferramentas específicas do fac-símile
+scripts/                     exportação e geração compartilhadas
+web/                         catálogo, leitor Hugo, estilos e traduções da interface
+tests/                       integridade editorial e geração da coleção
+site/                        biblioteca gerada, fora do Git
 ```
 
-Gera `site/index.html` e `build/poesias-infantis.epub` na máquina.
+## Gerar e verificar
 
-## Distribuição para outro site
-
-O exportador recebe um manifesto. Não contém títulos, ordem ou recortes específicos do livro no código.
+As versões estão fixadas em `mise.toml`: Python 3.12.13, uv 0.11.21, Pandoc 3.7.0.2, Hugo 0.163.3 e Node 22.22.0.
+O Node usa apenas módulos nativos. Python usa `uv.lock`.
 
 ```sh
-uv sync --locked
-make test
-make export SOURCE=source/book.yml OUTPUT=build/distributions/poesias-infantis/0.2.0
+mise install
+mise exec -- uv sync --locked
+mise exec -- make test
+mise exec -- make book
 ```
 
-O diretório de saída precisa ser novo. Uma exportação inválida não cria pacote parcial e não substitui uma distribuição existente.
-O comando também aceita `--source` e `--output` diretamente:
+`make book` encontra todos os manifestos `books/*/book.yml`. Valida fontes e apresentações, gera HTML e EPUB da mesma estrutura do Pandoc e monta o site bilíngue.
+Verifica links, recursos, âncoras, canonical e hreflang antes de substituir `site/`.
+Uma falha preserva a última publicação gerada.
+
+Os pacotes intermediários, hashes e páginas geradas ficam em `web/.editions/`, `web/data/books.lock.json` e `web/.generated/`. Nenhum entra no Git.
+O site pessoal não importa esses pacotes nem recebe textos, imagens ou EPUBs.
+
+Para exportar uma edição isolada:
 
 ```sh
-uv run --locked python scripts/export_book.py --source /caminho/livro/book.yml --output /caminho/pacote
+mise exec -- make export BOOK=poesias-infantis OUTPUT=build/poesias-infantis/0.2.0
 ```
 
-O pacote contém `book.json`, um HTML por peça, imagens WebP, EPUB e o mapa opcional `legacy-fragments.json`.
-O mapa prepara a migração dos fragmentos antigos; nenhum redirecionamento foi ativado.
-Todos os arquivos aparecem com SHA-256 em `book.json.files`. O comando imprime o caminho e o SHA-256 do próprio manifesto.
-O site consumidor deve fixar esse último hash e verificar cada arquivo antes de importar.
+A saída precisa ser uma pasta nova. `--source` e `--output` também podem ser passados diretamente a `scripts/export_book.py`.
+O pacote contém `book.json`, HTML por peça, imagens WebP, EPUB com imagens JPEG e mapa opcional de fragmentos legados.
+Cada arquivo tem SHA-256. `source_commit`, `source_dirty` e `source_sha256` identificam a revisão e suas entradas.
 
-O texto é convertido uma vez para a estrutura do Pandoc, com substituições tipográficas desativadas.
-HTML e EPUB partem dessa mesma estrutura. Estrofes e parágrafos mantêm a ordem da fonte.
-O HTML omite o primeiro H1, pois o site fornece o título. As seções internas permanecem com IDs.
-Links internos viram `book:identificador#secao`; o importador resolve a rota.
-O EPUB usa JPEG, formato básico do padrão EPUB, enquanto o site usa WebP.
-Os arquivos mestres em `source/images/` permanecem intactos.
+## Acrescentar uma obra
 
-O pacote registra `source_commit`, `source_dirty` e `source_sha256`.
-O último é o SHA-256 do JSON ordenado que associa cada arquivo de entrada ao seu hash, com separadores `,` e `:`.
-Ele inclui manifesto, textos, traduções, imagens utilizadas e CSS do EPUB.
-Uma distribuição local com alterações pendentes declara `source_dirty: true`; o commit sozinho não identifica essas alterações.
-Fora de um repositório Git, o manifesto precisa fornecer `source_commit` explicitamente.
-
-## Manifesto e estado editorial
-
-`source/book.yml` contém metadados, política, ordem das peças, caminhos, hashes dos originais e recortes do fac-símile.
-Todos os caminhos de entrada devem resolver dentro da pasta do manifesto.
-Uma peça, imagem citada, capa ou folha de estilo ausente interrompe a exportação.
-O exportador também rejeita links internos quebrados, IDs repetidos e estados fora da política.
-
-As 38 peças originais estão em `collated`, permitidas explicitamente junto de `proofed`.
-Isso registra a colação existente; não afirma que a etapa separada de revisão `proofed` terminou.
-O colofão é editorial, vem depois dos originais e possui permissão explícita para `draft`.
-A tradução inglesa existe apenas para o colofão. O exportador rejeita traduções de peças marcadas como originais.
-
-Para acrescentar um livro, crie outro manifesto e suas fontes. Exemplo mínimo de prosa:
+Crie `books/outro-livro/`, com `book.yml`, textos e apresentações PT/EN. O nome da pasta precisa coincidir com `id`.
+O gerador não precisa de mudanças para títulos, autores, ordem ou número de capítulos diferentes.
 
 ```yaml
 id: outro-livro
@@ -91,43 +81,43 @@ pieces:
     original: true
 ```
 
-Cada Markdown requer front matter com `id`, `title` e `status`, seguido de um H1 com o mesmo título.
-`sha256` na entrada da peça fixa os bytes do arquivo completo, incluindo front matter. Os 38 originais desta edição têm essa proteção.
-Novas revisões editoriais exigem atualizar o estado e o hash de maneira deliberada.
-Ilustrações precisam de texto alternativo; `cover` e `comparison` recebem `file`, `alt` e, opcionalmente, `name`.
-`translations.en` indica o caminho de uma tradução editorial com seu próprio front matter e estado.
+Cada texto requer front matter com `id`, `title` e `status`, seguido de um H1 com o mesmo título.
+Use `sha256` na entrada da peça para fixar seus bytes. Peças, imagens, traduções ou estilos ausentes interrompem a geração.
+Os caminhos resolvem dentro da pasta da obra. Traduções de peças originais são rejeitadas; `translations.en` é reservado a notas editoriais.
 
-## Ferramentas e verificação
+As apresentações precisam de front matter com `description`, seguido do texto de apresentação. `blurb`, `weight`, `editionNote`, `coverAlt` e rótulos da ficha são opcionais.
+Identificador, título e rotas são derivados do manifesto. Exemplos completos estão na pasta de Poesias infantis.
+Capa e comparação de imagens são opcionais, com textos alternativos obrigatórios quando presentes.
 
-Versões: Python 3.12.13, uv 0.11.21 e Pandoc 3.7.0.2. Python e bibliotecas ficam fixos em `.python-version`, `pyproject.toml` e `uv.lock`.
-O exportador recusa outra versão do Pandoc. Use as versões de `mise.toml` ou uma instalação equivalente.
+## Integração com o domínio
 
-`make test` cobre falhas de fonte/política, uma segunda obra em prosa, estrofes, tradução editorial, integridade e referências do EPUB.
-Também compara todos os 38 originais com os bytes da base Git e compara todos os seus parágrafos e estrofes entre fonte, HTML e EPUB.
+O GitHub Pages hospeda o artefato `site/` como origem técnica. A Vercel do site pessoal encaminha apenas `/books` e `/en/books`, incluindo capítulos e recursos, para essa origem.
+O encaminhamento usa rewrites, portanto mantém `pfelrodrigues.com.br` no navegador.
 
-O workflow `verify-book` gera um artefato após os testes e o EPUBCheck 5.3.0, cujo download é fixado por SHA-256.
-Ele não cria release público. O workflow Pages conserva a publicação existente e passa a executar os testes antes de gerar o site antigo.
-A mudança de domínio e a ativação de redirecionamentos permanecem etapas futuras.
+Os caminhos do artefato são os mesmos caminhos públicos. Após a renomeação do repositório para `books`, por exemplo:
 
-## Arquivos no git
-
-| Caminho | O que é |
+| URL pública | Arquivo na origem |
 |---|---|
-| `source/book.yml` | Metadados, política, ordem, hashes e recortes |
-| `scripts/export_book.py` | Exportador parametrizado do pacote web e EPUB |
-| `scripts/pieces.py` | Leitor de compatibilidade do inventário para ferramentas de scan |
-| `source/text/` | Um Markdown por peça, ortografia de 1904 |
-| `source/images/extracted/` | Recortes crus |
-| `source/images/restored/` | Gravuras usadas no ebook |
-| `source/scans/` | PDFs da BBM (fora do git) |
+| `/books/` | `https://pfelrodrigues.github.io/books/books/index.html` |
+| `/en/books/` | `https://pfelrodrigues.github.io/books/en/books/index.html` |
+| `/books/poesias-infantis/ler/a-avo/` | `https://pfelrodrigues.github.io/books/books/poesias-infantis/ler/a-avo/index.html` |
 
-## Princípios
+CSS, JavaScript, fontes e ícones usam `/books/ui/`; imagens e EPUBs usam `/books/assets/`. Links, canonical, hreflang e downloads apontam para o domínio público.
+Cada aplicação mantém sua própria publicação. Acrescentar uma obra exige publicar somente este repositório.
 
-- Texto da edição de 1904. Sem reforma ortográfica no canônico.
-- Transcrição a partir do scan. Wikisource é apoio, não fonte.
-- Gravura: recortar do scan. Cor das aberturas é intervenção desta edição, declarada no colofão.
-- Git guarda a fonte. EPUB e HTML saem do `make book`.
+### Ordem de publicação inicial
+
+1. Revisar os PRs da coleção e do site pessoal.
+2. Coordenar a renomeação `poesias-infantis` para `books` com a integração e publicação deste PR. Confirmar o artefato Pages e os caminhos acima.
+3. Integrar o PR do site pessoal e confirmar o encaminhamento na Vercel, incluindo inglês, capítulo, imagem e EPUB.
+
+A renomeação no GitHub não redireciona o antigo endereço do GitHub Pages. Ela deve acontecer junto da publicação, para reduzir a interrupção.
+Os redirecionamentos de URLs do repositório, incluindo o PR, são mantidos pelo GitHub. O antigo endereço de leitura `github.io/poesias-infantis/` deixa de ser o endereço público.
+
+O workflow de PR executa testes e EPUBCheck 5.3.0 para todos os EPUBs, com download da ferramenta fixado por hash.
+Gera um artefato de revisão, sem release. O workflow Pages publica ao integrar em `main`.
 
 ## Licença
 
-Texto e gravuras de 1904: domínio público. Extração, restauro, marcação e código: CC0 1.0. Detalhe em [LICENSE](LICENSE).
+O trabalho editorial e o código estão em [CC0 1.0](LICENSE). Consulte a ficha e a licença de cada obra.
+As fontes Archivo e IBM Plex Mono mantêm suas licenças próprias.

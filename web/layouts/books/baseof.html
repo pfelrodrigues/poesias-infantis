@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Locale }}">
+<head>{{ partial "head.html" . }}</head>
+<body class="books-page"{{ with .Params.bookID }} data-book-id="{{ . }}"{{ end }}{{ with .Params.pieceID }} data-piece-id="{{ . }}"{{ end }}>
+<a class="skip-link" href="#main">{{ i18n "books_skip" }}</a>
+<main class="page" id="main">
+  {{ block "main" . }}{{ end }}
+  {{ partial "books/footer.html" . }}
+</main>
+</body>
+</html>

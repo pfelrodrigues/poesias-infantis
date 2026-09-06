@@ -1,0 +1,9 @@
+{{- $label := dict "title" .piece.title "language" .book.language "sections" .piece.sections -}}
+{{- if not .piece.original -}}
+  {{- with index .piece.translations .page.Site.Language.Lang -}}
+    {{- if .html -}}
+      {{- $label = dict "title" .title "language" $.page.Site.Language.Lang "sections" .sections -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $label -}}

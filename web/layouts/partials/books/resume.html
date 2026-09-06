@@ -1,0 +1,3 @@
+{{- $ids := slice -}}
+{{- range .book.pieces -}}{{- $ids = $ids | append .id -}}{{- end -}}
+<a href="{{ .page.RelPermalink }}" class="resume-link" data-resume-book="{{ .book.id }}" data-piece-ids="{{ delimit $ids "," }}" data-reader-root="{{ partial "books/path.html" (dict "page" .page "bookID" .book.id "reader" true) }}" hidden>{{ i18n "books_resume" }}</a>

@@ -19,15 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12.13"
-      - uses: astral-sh/setup-uv@v6
-        with:
-          version: "0.11.21"
-      - uses: r-lib/actions/setup-pandoc@v2
-        with:
-          pandoc-version: "3.7.0.2"
+      - uses: jdx/mise-action@v2
       - name: Verify export contract and original text
         run: make test
       - name: Build site

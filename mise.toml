@@ -2,22 +2,16 @@
 python = "3.12.13"
 uv = "0.11.21"
 pandoc = "3.7.0.2"
+hugo = "0.163.3"
+node = "22.22.0"
 
 [env]
 _.python.venv = { path = ".venv", create = true }
 
-[tasks.extract]
-description = "Rasteriza páginas do PDF colorido para source/images/pages"
-run = "uv run python scripts/extract_pages.py"
+[tasks.build]
+description = "Gera a biblioteca completa e os EPUBs"
+run = "make book"
 
-[tasks.restore-pilot]
-description = "Restaura a gravura-piloto de A Avó"
-run = "uv run python scripts/restore_pilot.py"
-
-[tasks.html]
-description = "Gera site/index.html do piloto"
-run = "make html"
-
-[tasks.epub]
-description = "Gera build/poesias-infantis.epub do piloto"
-run = "make epub"
+[tasks.test]
+description = "Verifica fontes, edições e biblioteca PT/EN"
+run = "make test"

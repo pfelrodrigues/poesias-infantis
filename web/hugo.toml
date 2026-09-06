@@ -1,0 +1,37 @@
+baseURL = "https://pfelrodrigues.com.br/"
+title = "Paulo Felipe Rodrigues"
+enableRobotsTXT = false
+disableKinds = ["home", "taxonomy", "term", "RSS"]
+
+defaultContentLanguage = "pt"
+defaultContentLanguageInSubdir = false
+
+[languages]
+  [languages.pt]
+    locale = "pt-BR"
+    label = "Português"
+    weight = 1
+  [languages.en]
+    locale = "en"
+    label = "English"
+    weight = 2
+
+# Merge the collection introduction with editions generated in this repository.
+[[module.mounts]]
+source = "content"
+target = "content"
+[[module.mounts]]
+source = ".generated/content"
+target = "content"
+[[module.mounts]]
+source = "data"
+target = "data"
+[[module.mounts]]
+source = ".generated/data"
+target = "data"
+[[module.mounts]]
+source = "static"
+target = "static"
+[[module.mounts]]
+source = ".generated/static"
+target = "static"

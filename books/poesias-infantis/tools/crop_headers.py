@@ -11,8 +11,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from pieces import BOOK, PIECES
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = ROOT / "source" / "images" / "pages"
-EXTRACTED = ROOT / "source" / "images" / "extracted"
+PAGES = ROOT / "images" / "pages"
+EXTRACTED = ROOT / "images" / "extracted"
 
 
 def crop_box(img: Image.Image, frac: tuple[float, float, float, float]) -> Image.Image:
@@ -50,7 +50,7 @@ def crop_piece(piece: dict) -> None:
 
 def main() -> None:
     if not (PAGES / "p001.png").exists():
-        raise SystemExit("rode scripts/extract_pages.py primeiro")
+        raise SystemExit("rode books/poesias-infantis/tools/extract_pages.py primeiro")
     only = set(sys.argv[1:])
     crop_cover()
     for piece in PIECES:
