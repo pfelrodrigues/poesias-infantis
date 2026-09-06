@@ -16,10 +16,14 @@ Scan: Brasiliana Digital, Biblioteca Brasiliana Guita e José Mindlin (USP), ace
 
 A transcrição foi collacionada contra esse scan. A ortografia da edição foi conservada.
 
+As 38 peças originais estão no estado **collated**. Ainda não passaram à etapa separada de revisão **proofed**. Este colofão editorial e sua tradução inglesa permanecem em **draft**.
+
 As gravuras de cabeçalho foram recortadas do scan e depois coloridas, no molde da cromolitografia da capa de 1904. O traço de partida é o da edição; a cor é intervenção desta edição. *A Coragem* e *A Patria* ficaram no recorte, sem cor. *Os mezes* (bandeirinhas) e *Inverno* ainda mostram o dano do scan (~150 dpi).
 
 O ilustrador assina **HM** em várias pranchas. O nome completo ainda não foi identificado.
 
 O exemplar digitalizado traz dedicatória manuscrita a Almerinda Martins (agosto de 1904) e anotações posteriores no índice. Isso pertence ao volume físico, não à edição.
+
+A interface inglesa e a tradução deste colofão apresentam o contexto editorial. Os poemas, o prefácio e as fábulas originais permanecem em português.
 
 Restauro, marcação e código deste repositório: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).

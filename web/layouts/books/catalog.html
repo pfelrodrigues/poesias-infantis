@@ -1,0 +1,36 @@
+{{ define "main" }}
+<div class="body">
+  <p class="back"><a href="{{ if eq .Site.Language.Lang "en" }}/en/{{ else }}/{{ end }}">Paulo Felipe Rodrigues</a> / {{ i18n "books_lower" }}</p>
+  <h1 class="name">{{ .Title }}</h1>
+  <p class="tagline">{{ .Params.tagline }}</p>
+</div>
+<h2>{{ i18n "descricao" }}</h2>
+<div class="body">{{ .Content }}</div>
+<h2>{{ i18n "books_collection" }}</h2>
+<div class="body">
+{{ range where .Pages "Layout" "book" }}
+  {{ $page := . }}
+  {{ with index hugo.Data.books .Params.bookID }}
+  {{ $book := . }}
+  <article class="book-row">
+    {{ with .cover }}<a href="{{ $page.RelPermalink }}" class="cover-link"><img class="cover" src="{{ partial "books/asset.html" (dict "book" $book "src" .src) }}" width="{{ .width }}" height="{{ .height }}" alt="{{ $page.Params.coverAlt | default .alt }}" loading="lazy"></a>{{ end }}
+    <div>
+      <h3 class="book-title"><a href="{{ $page.RelPermalink }}" lang="{{ .language }}">{{ .title }}</a></h3>
+      <p class="book-meta">{{ .author }}{{ with .year }} · {{ . }}{{ end }}</p>
+      <p class="book-blurb">{{ $page.Params.blurb | default $page.Description }}</p>
+      <div class="book-actions">
+        {{ with index .pieces 0 }}<a href="{{ partial "books/path.html" (dict "page" $page "bookID" $book.id "reader" true "pieceID" .id) }}">{{ i18n "books_read" }}</a>{{ end }}
+        <a href="{{ $page.RelPermalink }}">{{ i18n "books_about" }}</a>
+        {{ partial "books/resume.html" (dict "page" $page "book" $book) }}
+      </div>
+      <p class="edition-note">{{ if .epub }}{{ i18n "books_available" }}{{ else }}{{ i18n "books_browser_available" }}{{ end }}</p>
+    </div>
+  </article>
+  {{ end }}
+{{ end }}
+</div>
+{{ with .Params.upcomingTitle }}<h2>{{ . }}</h2>{{ end }}
+{{ with .Params.upcomingNote }}<div class="body"><p class="dim">{{ . }}</p></div>{{ end }}
+<h2>{{ i18n "veja_tambem" }}</h2>
+<div class="body"><dl><dt>{{ i18n "books_contact" }}</dt><dd><a href="mailto:pfelrodrigues@gmail.com">pfelrodrigues@gmail.com</a></dd></dl></div>
+{{ end }}

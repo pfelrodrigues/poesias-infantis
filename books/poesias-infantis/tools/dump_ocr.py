@@ -7,8 +7,8 @@ from pathlib import Path
 import pymupdf
 
 ROOT = Path(__file__).resolve().parents[1]
-SCAN = ROOT / "source" / "scans" / "002924_c_COMPLETO.pdf"
-OUT = ROOT / "source" / "facsimile" / "ocr-dump.txt"
+SCAN = ROOT / "scans" / "002924_c_COMPLETO.pdf"
+OUT = ROOT / "facsimile" / "ocr-dump.txt"
 
 
 def main() -> None:

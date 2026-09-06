@@ -1,0 +1,4 @@
+<footer class="runfoot">
+  <span><a href="{{ if eq .Site.Language.Lang "en" }}/en/{{ else }}/{{ end }}">Paulo Felipe Rodrigues</a></span>
+  <span>{{ range .Translations }}<a href="{{ .RelPermalink }}" hreflang="{{ .Language.Locale }}" lang="{{ .Language.Locale }}" data-language-link>{{ if eq .Language.Lang "en" }}English{{ else if eq .Language.Lang "pt" }}Português{{ else }}{{ .Language.LanguageName | default .Language.Lang }}{{ end }}</a>{{ end }}</span>
+</footer>

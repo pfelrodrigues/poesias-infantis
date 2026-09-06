@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Um "p" geometrico: legivel a 16px, sem depender de fonte do sistema.
+       Inverte no tema escuro do navegador. -->
+  <style>
+    .bg { fill: #15171C }
+    .fg { fill: #FAFAF9 }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #E8E7E3 }
+      .fg { fill: #111318 }
+    }
+  </style>
+  <rect class="bg" width="32" height="32" rx="7"/>
+  <path class="fg" d="M9 8h7.5a5.5 5.5 0 0 1 0 11H12.5v-3.5h4a2 2 0 0 0 0-4H12.5V26H9z"/>
+</svg>

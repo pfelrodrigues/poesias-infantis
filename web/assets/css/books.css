@@ -1,0 +1,103 @@
+/* Books extend the site's existing type, spacing and palette. */
+:root[data-theme=light]{--paper:#FAFAF9;--ink:#15171C;--graphite:#5C6169;--amber:#B87309;--rule:#E4E3DE;color-scheme:light}
+:root[data-theme=dark]{--paper:#111318;--ink:#E8E7E3;--graphite:#8A9099;--amber:#E9A031;--rule:#252932;color-scheme:dark}
+:root[data-theme=paper]{--paper:#F3EDDF;--ink:#302B23;--graphite:#6B6255;--amber:#966019;--rule:#DED5C4;color-scheme:light}
+[hidden]{display:none!important}
+.books-page button,.books-page select{font:inherit;color:inherit}
+.books-page button{cursor:pointer}
+.books-page button:focus-visible,.books-page select:focus-visible{outline:2px solid var(--amber);outline-offset:4px}
+.back{margin:0 0 2.1rem;font-size:.75rem;color:var(--graphite)}
+.book-row{display:grid;grid-template-columns:130px minmax(0,1fr);gap:2rem;align-items:start;margin-top:1.2rem}
+.book-row+.book-row{margin-top:2.5rem}
+.cover-link{display:block;background:none;padding:0;width:130px}
+.cover{display:block;width:100%;height:auto}
+.book-title{font:600 1rem/1.55 "IBM Plex Mono",monospace;letter-spacing:0;margin:0 0 .25rem;color:var(--ink)}
+.book-meta{font-size:.78rem;color:var(--graphite);margin-bottom:1rem}
+.book-blurb{font-size:.85rem;line-height:1.8;margin-bottom:1rem}
+.book-actions{display:flex;flex-wrap:wrap;column-gap:1.6rem;row-gap:.6rem;font-size:.82rem}
+.edition-note{font-size:.7rem;color:var(--graphite);margin:1rem 0 0;line-height:1.8}
+.detail-cover{max-width:168px}
+.book-facts{font-size:.82rem;column-gap:1.5rem}
+.book-facts dt{max-width:17ch}
+.detail-intro{display:grid;grid-template-columns:168px minmax(0,1fr);gap:2rem;align-items:start;margin-top:.8rem}
+.detail-intro p{font-size:.85rem;line-height:1.85}
+.detail-intro>div>p:last-of-type{margin-bottom:.95rem}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin:1.1rem 0}
+.compare figure{margin:0}
+.compare img{display:block;width:100%;height:auto}
+.compare figcaption{font-size:.65rem;color:var(--graphite);margin-top:.65rem;line-height:1.7}
+.note{font-size:.78rem;color:var(--graphite)}
+.contents{columns:2;column-gap:2rem;padding:0;margin:0;list-style:none;font-size:.82rem;line-height:2.1}
+.contents li{break-inside:avoid}
+.contents ul{padding:0 0 .45rem 2ch;list-style:none;font-size:.9em;color:var(--graphite)}
+.contents a[aria-current=page]{font-weight:600}
+.reader-header .name{max-width:none;font-size:2.65rem}
+.reader-tools{display:flex;align-items:center;flex-wrap:wrap;gap:1.25rem;font-size:.74rem;color:var(--graphite);margin:1.4rem 0}
+.reader-tools label{display:flex;align-items:center;gap:.5rem}
+.text-buttons{display:flex;align-items:center;gap:.7rem}
+.text-buttons button{border:0;padding:0;background:none;min-width:28px;min-height:32px;border-bottom:1px solid var(--amber)}
+.text-buttons button:disabled{opacity:.4;cursor:default}
+.reader-tools select{font-size:.74rem;background:var(--paper);border:0;border-bottom:1px solid var(--amber);padding:3px 0;min-height:32px;max-width:100%}
+.image-link{display:block;background:none;padding:0}
+.reading-content{--reader-size:17px;font:var(--reader-size)/1.85 "IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;max-width:100%;overflow-wrap:break-word}
+.reading-content[data-font=serif]{--reader-size:21px;font-family:Georgia,"Times New Roman",serif}
+.reading-content[data-size="-1"]{--reader-size:15px}
+.reading-content[data-size="1"]{--reader-size:19px}
+.reading-content[data-size="2"]{--reader-size:21px}
+.reading-content[data-size="3"]{--reader-size:23px}
+.reading-content[data-font=serif][data-size="-1"]{--reader-size:19px}
+.reading-content[data-font=serif][data-size="1"]{--reader-size:23px}
+.reading-content[data-font=serif][data-size="2"]{--reader-size:25px}
+.reading-content[data-font=serif][data-size="3"]{--reader-size:27px}
+.reading-content .line-block{margin:0 0 1.7em}
+.reading-content .verse{display:block;padding-left:1.1em;text-indent:-1.1em}
+.reading-content .line-block br{line-height:inherit}
+.reading-content p{margin:0 0 1.2em}
+.reading-content h2,.reading-content h3{font:600 1em/1.6 "IBM Plex Mono",monospace;color:var(--ink);letter-spacing:0;margin:2.2em 0 1.3em}
+.reading-content img{display:block;max-width:100%;height:auto;margin:0 auto}
+.reading-content .reading-image{margin:0 0 2rem}
+.reading-content figure{margin:0 0 2rem}
+.reading-content figcaption{font:400 .72rem/1.7 "IBM Plex Mono",monospace;color:var(--graphite);margin-top:.6rem}
+.reading-content blockquote{margin:1.5em 0;padding-left:2ch;border-left:1px solid var(--rule)}
+.reading-content [id]{scroll-margin-top:2rem}
+.poem-name{font-size:1rem;color:var(--ink);letter-spacing:0;margin:0 0 1.3rem;font-weight:600}
+.reading-footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1.2rem;margin-top:2rem;font-size:.74rem;color:var(--graphite)}
+.reading-navigation{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.8rem;margin-top:2.5rem;font-size:.78rem}
+.reading-navigation>span:last-child{text-align:right}
+.nav-direction{display:block;font-size:.68rem;color:var(--graphite);margin-bottom:.35rem}
+.skip-link{position:fixed;top:-100px;left:1rem;background:var(--paper);padding:.5rem;z-index:20}
+.skip-link:focus{top:1rem}
+@media(max-width:38rem){
+  .book-row{grid-template-columns:90px minmax(0,1fr);gap:1.1rem}
+  .cover-link{width:90px}
+  .book-title{font-size:.88rem}
+  .book-meta{font-size:.69rem}
+  .book-blurb{font-size:.78rem}
+  .book-actions{font-size:.73rem;gap:.7rem 1.2rem}
+  .edition-note{font-size:.65rem}
+  .detail-intro{grid-template-columns:90px minmax(0,1fr);gap:1.1rem}
+  .detail-intro p{font-size:.78rem}
+  .detail-cover{width:90px}
+  .book-facts{grid-template-columns:max-content minmax(0,1fr);gap:.4rem 1rem;font-size:.72rem}
+  .book-facts dd{margin:0}
+  .book-facts dt{max-width:12ch}
+  .compare{grid-template-columns:1fr;gap:1.2rem}
+  .contents{columns:1}
+  .back{font-size:.67rem;margin-bottom:1.8rem}
+  .reader-header .name{font-size:2.1rem}
+  .reading-content{--reader-size:16px}
+  .reader-tools{gap:.9rem}
+  .books-page .runfoot{font-size:.62rem;letter-spacing:.03em}
+}
+@media(max-width:320px){
+  .book-row,.detail-intro{grid-template-columns:1fr;gap:1.3rem}
+  .cover-link,.detail-cover{width:110px}
+  .book-facts{grid-template-columns:1fr;gap:.1rem}
+  .book-facts dd{margin-bottom:.6rem}
+}
+@media print{
+  :root{--paper:white;--ink:black;--graphite:#444;--rule:#ddd}
+  .skip-link,.reader-tools,.reading-navigation,.runfoot{display:none}
+  .page{max-width:none;padding:0}
+  .image-link{break-inside:avoid}
+}

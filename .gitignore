@@ -4,7 +4,14 @@ __pycache__/
 *.pyc
 build/
 site/
-source/scans/
-source/images/pages/
-source/facsimile/ocr-dump.txt
+books/*/scans/
+books/*/images/pages/
+books/*/facsimile/ocr-dump.txt
+web/.generated/
+web/.generated-*/
+web/.editions/
+web/data/books.lock.json
+web/resources/
+web/.hugo_build.lock
 .mise.toml.local
+.library-*/

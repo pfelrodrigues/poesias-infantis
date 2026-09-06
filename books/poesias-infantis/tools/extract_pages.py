@@ -1,4 +1,4 @@
-"""Rasteriza o PDF colorido da BBM para source/images/pages/."""
+"""Rasteriza o PDF colorido da BBM para images/pages/."""
 
 from __future__ import annotations
 
@@ -7,8 +7,8 @@ from pathlib import Path
 import pymupdf
 
 ROOT = Path(__file__).resolve().parents[1]
-SCAN = ROOT / "source" / "scans" / "002924_c_COMPLETO.pdf"
-OUT = ROOT / "source" / "images" / "pages"
+SCAN = ROOT / "scans" / "002924_c_COMPLETO.pdf"
+OUT = ROOT / "images" / "pages"
 # 2× o tamanho do PDF (~150 dpi nativo → ~300 dpi de trabalho).
 ZOOM = 2.0
 

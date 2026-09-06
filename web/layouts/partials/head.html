@@ -1,0 +1,67 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ $title := .Site.Title }}
+{{ if not .IsHome }}{{ $title = printf "%s · %s" .Title .Site.Title }}{{ end }}
+{{ $description := .Description | default .Params.descricao }}
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $description }}">
+
+{{/* Canonical: apex e vercel.app servem o mesmo conteudo, e cada PR gera um
+     preview. Sem isso o buscador nao sabe qual URL e a original. */}}
+<link rel="canonical" href="{{ .Permalink }}">
+
+<link rel="icon" href="/books/ui/favicon.svg" type="image/svg+xml">
+
+{{/* Open Graph e Twitter: sem isso o link compartilhado aparece pelado. */}}
+<meta property="og:type" content="{{ if .IsHome }}profile{{ else }}website{{ end }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:locale" content="{{ replace .Site.Language.Locale "-" "_" }}">
+{{ range .Translations }}<meta property="og:locale:alternate" content="{{ replace .Site.Language.Locale "-" "_" }}">
+{{ end }}
+{{ $image := "books/ui/og.png" | absURL }}
+{{ $imageWidth := 1200 }}
+{{ $imageHeight := 630 }}
+{{ $imageAlt := printf "%s, %s" .Site.Title (.Params.funcao | default .Title) }}
+{{ with .Params.bookID }}
+  {{ $book := index hugo.Data.books . }}
+  {{ with $book.cover }}
+    {{ $image = partial "books/asset.html" (dict "book" $book "src" .src) | absURL }}
+    {{ $imageWidth = .width }}{{ $imageHeight = .height }}
+    {{ $bookPage := $.Site.GetPage (printf "/books/%s" $book.id) }}
+    {{ $imageAlt = $bookPage.Params.coverAlt | default .alt }}
+  {{ end }}
+{{ end }}
+<meta property="og:image" content="{{ $image }}">
+<meta property="og:image:width" content="{{ $imageWidth }}">
+<meta property="og:image:height" content="{{ $imageHeight }}">
+<meta property="og:image:alt" content="{{ $imageAlt }}">
+<meta name="twitter:card" content="summary_large_image">
+
+{{ with resources.Get "css/main.css" | resources.Copy "books/ui/css/main.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
+{{ end }}
+{{ if eq .Type "books" }}
+{{ with resources.Get "css/books.css" | resources.Copy "books/ui/css/books.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
+{{ end }}
+{{ with resources.Get "js/books.js" | resources.Copy "books/ui/js/books.js" | minify | fingerprint }}
+<script defer src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"></script>
+{{ end }}
+{{ end }}
+<link rel="alternate" hreflang="{{ .Site.Language.Locale }}" href="{{ .Permalink }}">
+{{ range .Translations }}
+<link rel="alternate" hreflang="{{ .Site.Language.Locale }}" href="{{ .Permalink }}">
+{{ end }}
+{{ $defaultURL := .Permalink }}
+{{ range .AllTranslations }}{{ if eq .Language.Lang "pt" }}{{ $defaultURL = .Permalink }}{{ end }}{{ end }}
+<link rel="alternate" hreflang="x-default" href="{{ $defaultURL }}">
+
+{{/* Vercel Web Analytics. O script e servido pelo proprio dominio
+     (/_vercel/insights/), entao o CSP precisa so de 'self' -- nenhum host
+     externo entra. Fora de producao o endpoint nao existe. */}}
+{{ if hugo.IsProduction }}
+<script defer src="/_vercel/insights/script.js"></script>
+{{ end }}

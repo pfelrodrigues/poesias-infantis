@@ -1,0 +1,11 @@
+{{- $page := .page -}}
+{{- $book := .book -}}
+<ol class="contents">
+{{ range $book.pieces }}
+  {{ $url := partial "books/path.html" (dict "page" $page "bookID" $book.id "reader" true "pieceID" .id) }}
+  {{ $label := partial "books/piece-label.html" (dict "page" $page "book" $book "piece" .) }}
+  <li><a href="{{ $url }}" lang="{{ $label.language }}"{{ if eq .id $page.Params.pieceID }} aria-current="page"{{ end }}>{{ $label.title }}</a>
+    {{ with $label.sections }}<ul>{{ range . }}<li><a href="{{ $url }}#{{ .id }}" lang="{{ $label.language }}">{{ .title }}</a></li>{{ end }}</ul>{{ end }}
+  </li>
+{{ end }}
+</ol>

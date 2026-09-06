@@ -1,12 +1,13 @@
 [project]
-name = "poesias-infantis"
+name = "books"
 version = "0.0.1"
-description = "Remaster da edição de 1904 de Poesias infantis, de Olavo Bilac."
+description = "Coleção de livros remasterizados, com biblioteca bilíngue e EPUB."
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.12,<3.13"
 dependencies = [
-    "pymupdf>=1.26.0",
-    "pillow>=11.0.0",
+    "pymupdf==1.28.2",
+    "pillow==12.3.0",
+    "pyyaml==6.0.3",
 ]
 
 [project.optional-dependencies]

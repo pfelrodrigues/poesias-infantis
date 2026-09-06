@@ -1,0 +1,167 @@
+[descricao]
+other = "Descrição"
+
+[projetos]
+other = "Projetos"
+
+[veja_tambem]
+other = "Veja também"
+
+[codigo]
+other = "código"
+
+[trabalho]
+other = "trabalho"
+
+[conversa]
+other = "conversa"
+
+[email]
+other = "email"
+
+[outro_idioma]
+other = "English"
+
+[nao_encontrado]
+other = "Página não encontrada"
+
+[inicio]
+other = "início"
+
+[books_skip]
+other = "Ir para o conteúdo"
+
+[books_lower]
+other = "livros"
+
+[books_collection]
+other = "Acervo"
+
+[books_read]
+other = "Ler o livro"
+
+[books_about]
+other = "Sobre a edição"
+
+[books_resume]
+other = "Continuar a leitura"
+
+[books_available]
+other = "Disponível no navegador e em EPUB."
+
+[books_browser_available]
+other = "Disponível para ler no navegador."
+
+[books_contact]
+other = "contato"
+
+[books_edition]
+other = "A edição"
+
+[books_start]
+other = "Começar a ler"
+
+[books_download]
+other = "Baixar EPUB"
+
+[books_details]
+other = "Ficha"
+
+[books_author]
+other = "autor"
+
+[books_original_edition]
+other = "edição original"
+
+[books_publisher]
+other = "editora"
+
+[books_language]
+other = "idioma"
+
+[books_source]
+other = "exemplar"
+
+[books_original_copy]
+other = "Consultar o exemplar original"
+
+[books_source_process]
+other = "Fonte e processo editorial"
+
+[books_illustrations]
+other = "As gravuras"
+
+[books_original_scan]
+other = "Recorte do exemplar digitalizado"
+
+[books_colorized]
+other = "Colorização desta edição"
+
+[books_enlarge_cover]
+other = "Ampliar a capa"
+
+[books_enlarge_original]
+other = "Ampliar a gravura original"
+
+[books_enlarge_restored]
+other = "Ampliar a gravura colorizada"
+
+[books_enlarge_image]
+other = "Ampliar a ilustração"
+
+[books_image_hint]
+other = "Selecione uma imagem para ampliá-la."
+
+[books_contents]
+other = "Índice"
+
+[books_text]
+other = "texto"
+
+[books_smaller]
+other = "Diminuir texto"
+
+[books_larger]
+other = "Aumentar texto"
+
+[books_font]
+other = "fonte"
+
+[books_mono]
+other = "Monoespaçada"
+
+[books_serif]
+other = "Serifada"
+
+[books_theme]
+other = "tema"
+
+[books_system]
+other = "Automático"
+
+[books_light]
+other = "Claro"
+
+[books_dark]
+other = "Escuro"
+
+[books_paper]
+other = "Papel"
+
+[books_reading]
+other = "Leitura"
+
+[books_original_text]
+other = "Texto original preservado."
+
+[books_editorial_text]
+other = "Nota editorial desta edição digital."
+
+[books_reading_navigation]
+other = "Navegação da leitura"
+
+[books_previous]
+other = "Anterior"
+
+[books_next]
+other = "Próximo"

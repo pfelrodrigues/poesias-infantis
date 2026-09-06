@@ -1,0 +1,167 @@
+[descricao]
+other = "Description"
+
+[projetos]
+other = "Projects"
+
+[veja_tambem]
+other = "See also"
+
+[codigo]
+other = "code"
+
+[trabalho]
+other = "work"
+
+[conversa]
+other = "posts"
+
+[email]
+other = "email"
+
+[outro_idioma]
+other = "Português"
+
+[nao_encontrado]
+other = "Page not found"
+
+[inicio]
+other = "home"
+
+[books_skip]
+other = "Skip to content"
+
+[books_lower]
+other = "books"
+
+[books_collection]
+other = "Collection"
+
+[books_read]
+other = "Read the book"
+
+[books_about]
+other = "About this edition"
+
+[books_resume]
+other = "Continue reading"
+
+[books_available]
+other = "Available in the browser and in EPUB."
+
+[books_browser_available]
+other = "Available to read in the browser."
+
+[books_contact]
+other = "contact"
+
+[books_edition]
+other = "The edition"
+
+[books_start]
+other = "Start reading"
+
+[books_download]
+other = "Download EPUB"
+
+[books_details]
+other = "Book details"
+
+[books_author]
+other = "author"
+
+[books_original_edition]
+other = "original edition"
+
+[books_publisher]
+other = "publisher"
+
+[books_language]
+other = "language"
+
+[books_source]
+other = "source copy"
+
+[books_original_copy]
+other = "View the original copy"
+
+[books_source_process]
+other = "Source and editorial process"
+
+[books_illustrations]
+other = "The illustrations"
+
+[books_original_scan]
+other = "Detail from the scanned copy"
+
+[books_colorized]
+other = "Colorized for this edition"
+
+[books_enlarge_cover]
+other = "Enlarge the cover"
+
+[books_enlarge_original]
+other = "Enlarge the original illustration"
+
+[books_enlarge_restored]
+other = "Enlarge the colorized illustration"
+
+[books_enlarge_image]
+other = "Enlarge the illustration"
+
+[books_image_hint]
+other = "Select an image to enlarge it."
+
+[books_contents]
+other = "Contents"
+
+[books_text]
+other = "text"
+
+[books_smaller]
+other = "Decrease text size"
+
+[books_larger]
+other = "Increase text size"
+
+[books_font]
+other = "font"
+
+[books_mono]
+other = "Monospaced"
+
+[books_serif]
+other = "Serif"
+
+[books_theme]
+other = "theme"
+
+[books_system]
+other = "Automatic"
+
+[books_light]
+other = "Light"
+
+[books_dark]
+other = "Dark"
+
+[books_paper]
+other = "Paper"
+
+[books_reading]
+other = "Reading"
+
+[books_original_text]
+other = "Original text preserved."
+
+[books_editorial_text]
+other = "Editorial note for this digital edition."
+
+[books_reading_navigation]
+other = "Reading navigation"
+
+[books_previous]
+other = "Previous"
+
+[books_next]
+other = "Next"

@@ -1,0 +1,44 @@
+{{ define "main" }}
+{{ $page := . }}
+{{ $book := index hugo.Data.books .Params.bookID }}
+{{ $bookPage := .Site.GetPage (printf "/books/%s" .Params.bookID) }}
+{{ $bookURL := partial "books/path.html" (dict "page" . "bookID" .Params.bookID) }}
+{{ $piece := dict }}
+{{ $pieceIndex := 0 }}
+{{ range $index, $entry := $book.pieces }}{{ if eq $entry.id $page.Params.pieceID }}{{ $piece = $entry }}{{ $pieceIndex = $index }}{{ end }}{{ end }}
+{{ with $piece }}
+{{ $pieceTitle := .title }}
+{{ $content := .htmlContent }}
+{{ $contentLanguage := $page.Params.contentLanguage | default $book.language }}
+{{ with index .translations $page.Site.Language.Lang }}{{ $content = .htmlContent }}{{ end }}
+{{ if not .original }}
+  {{ $pieceTitle = $page.Title }}
+{{ end }}
+<div class="body reader-header">
+  <p class="back"><a href="{{ "books/" | relLangURL }}">{{ i18n "books_lower" }}</a> / <a href="{{ $bookURL }}" lang="{{ $book.language }}">{{ $book.title }}</a></p>
+  <h1 class="name" lang="{{ $book.language }}">{{ $book.title }}</h1>
+  <p class="tagline">{{ $book.author }}{{ with $book.year }} · {{ . }}{{ end }}</p>
+  <div class="reader-tools">
+    <div class="text-buttons" data-reader-control hidden><span>{{ i18n "books_text" }}</span><button type="button" data-size-change="-1" aria-label="{{ i18n "books_smaller" }}">A−</button><button type="button" data-size-change="1" aria-label="{{ i18n "books_larger" }}">A+</button></div>
+    <label data-reader-control hidden>{{ i18n "books_font" }} <select id="font-choice"><option value="mono">{{ i18n "books_mono" }}</option><option value="serif">{{ i18n "books_serif" }}</option></select></label>
+    <label data-reader-control hidden>{{ i18n "books_theme" }} <select id="theme-choice"><option value="system">{{ i18n "books_system" }}</option><option value="light">{{ i18n "books_light" }}</option><option value="dark">{{ i18n "books_dark" }}</option><option value="paper">{{ i18n "books_paper" }}</option></select></label>
+    <a href="{{ $bookURL }}#contents">{{ i18n "books_contents" }}</a>
+  </div>
+</div>
+<h2>{{ i18n "books_reading" }}</h2>
+<div class="body">
+  <article aria-labelledby="piece-title">
+    <h3 class="poem-name" id="piece-title" lang="{{ $contentLanguage }}">{{ $pieceTitle }}</h3>
+    <div class="reading-content" id="reading-content" lang="{{ $contentLanguage }}">
+      {{- $imageLink := printf `<a class="image-link reading-image" href="$2" aria-label="%s"><img${1}src="$2"${3}></a>` (i18n "books_enlarge_image") -}}
+      {{- replaceRE `<img([^>]*?)src="([^"]+)"([^>]*?)>` $imageLink $content | safeHTML -}}
+    </div>
+    <div class="reading-footer"><span>{{ if .original }}{{ $bookPage.Params.originalNote | default (i18n "books_original_text") }}{{ else }}{{ i18n "books_editorial_text" }}{{ end }}</span><a href="{{ $bookURL }}">{{ i18n "books_about" }}</a></div>
+  </article>
+  <nav class="reading-navigation" aria-label="{{ i18n "books_reading_navigation" }}">
+    <span>{{ if gt $pieceIndex 0 }}{{ with index $book.pieces (sub $pieceIndex 1) }}{{ $label := partial "books/piece-label.html" (dict "page" $page "book" $book "piece" .) }}<a href="{{ partial "books/path.html" (dict "page" $page "bookID" $book.id "reader" true "pieceID" .id) }}" rel="prev"><span class="nav-direction">{{ i18n "books_previous" }}</span><span lang="{{ $label.language }}">{{ $label.title }}</span></a>{{ end }}{{ end }}</span>
+    <span>{{ if lt $pieceIndex (sub (len $book.pieces) 1) }}{{ with index $book.pieces (add $pieceIndex 1) }}{{ $label := partial "books/piece-label.html" (dict "page" $page "book" $book "piece" .) }}<a href="{{ partial "books/path.html" (dict "page" $page "bookID" $book.id "reader" true "pieceID" .id) }}" rel="next"><span class="nav-direction">{{ i18n "books_next" }}</span><span lang="{{ $label.language }}">{{ $label.title }}</span></a>{{ end }}{{ end }}</span>
+  </nav>
+</div>
+{{ end }}
+{{ end }}

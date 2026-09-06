@@ -19,13 +19,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Install pandoc
-        run: sudo apt-get update && sudo apt-get install -y pandoc
+      - uses: jdx/mise-action@v2
+      - name: Verify export contract and original text
+        run: make test
       - name: Build site
-        run: python3 scripts/build_book.py
+        run: make book
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

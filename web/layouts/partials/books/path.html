@@ -1,0 +1,9 @@
+{{- $root := printf "/books/%s/" .bookID -}}
+{{- if eq .page.Site.Language.Lang "en" -}}
+  {{- $root = printf "/en/books/%s/" .bookID -}}
+{{- end -}}
+{{- if .reader -}}
+  {{- $root = printf "%s%s/" $root (cond (eq .page.Site.Language.Lang "en") "read" "ler") -}}
+{{- end -}}
+{{- with .pieceID -}}{{- $root = printf "%s%s/" $root . -}}{{- end -}}
+{{- return $root -}}
