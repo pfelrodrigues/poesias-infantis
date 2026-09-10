@@ -1,6 +1,6 @@
 # A vida dos Santos
 
-Caderno manuscrito da avó da Talita, escrito de cabeça. Edição de leitura gratuita. Sem venda.
+Caderno manuscrito de Maria Luiza, avó da Talita, escrito de cabeça. Edição de leitura gratuita. Sem venda.
 
 Obra em `books/a-vida-dos-santos/`. Texto em português. Interface e notas editoriais também em inglês.
 

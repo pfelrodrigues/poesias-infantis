@@ -9,7 +9,7 @@ A interface e as apresentações têm versões PT/BR e EN. Os textos originais p
 ## Obras
 
 - [Poesias infantis, Olavo Bilac, 1904](books/poesias-infantis/README.md). Contém 38 peças originais e um colofão editorial.
-- [A vida dos Santos](books/a-vida-dos-santos/README.md). Caderno da avó da Talita. 61 peças e um colofão editorial. Leitura gratuita. Sem venda.
+- [A vida dos Santos](books/a-vida-dos-santos/README.md). Caderno de Maria Luiza. 61 peças e um colofão editorial. Leitura gratuita. Sem venda.
 
 ## Organização
 

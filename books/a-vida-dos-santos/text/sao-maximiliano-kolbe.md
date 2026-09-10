@@ -6,6 +6,8 @@ status: collated
 
 # São Maximiliano Kolbe, 14 de agosto
 
+![São Maximiliano Kolbe, 14 de agosto](../images/saints/sao-maximiliano-kolbe.jpg)
+
 ### Um santo contemporâneo
 
 Raimundo Kolbe, um polonês que nasceu em 1894 de família pobre. Aos 13 anos entra na Ordem Franciscana Conventual, onde recebe o nome de Maximiliano. Foi enviado a estudar em Roma, onde vivenciou seu amor por Maria e fundou a Milícia da Imaculada. Criou uma verdadeira cidade dedicada à Imaculada, na qual deu acento particular à imprensa, criando o jornal Cavaleiro da Imaculada, que se tornou universal.

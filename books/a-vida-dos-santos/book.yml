@@ -1,7 +1,7 @@
 id: a-vida-dos-santos
 version: 0.1.0
 title: A vida dos Santos
-author: Avó da Talita
+author: Maria Luiza
 language: pt
 year: 2026
 license: Leitura gratuita. Sem venda.
@@ -14,6 +14,9 @@ policy:
   editorial_pieces:
   - colofao
   expected_original_count: 61
+cover:
+  file: images/capa.jpg
+  alt: Caderno aberto com letra azul, lírio branco e uma vela, pintura no modo de um altar antigo.
 pieces:
 - id: sao-sebastiao
   title: "São Sebastião, 20 de janeiro"

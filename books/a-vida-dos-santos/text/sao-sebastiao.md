@@ -6,6 +6,8 @@ status: collated
 
 # São Sebastião, 20 de janeiro
 
+![São Sebastião, 20 de janeiro](../images/saints/sao-sebastiao.jpg)
+
 As perseguições foram, dentre outras, tentativas para impedir a implantação do cristianismo. Elas foram dirigidas pelas autoridades romanas. Diocleciano (284–305) matou, entre muitos cristãos, o militar Sebastião. Convidado, com promessas e ameaças, a negar sua fé, ficou firme. Preso, foi entregue a um pelotão de soldados. Despido e amarrado a uma árvore, foi crivado de flechas. Julgando-o morto, os soldados o abandonaram. Uma piedosa senhora, que queria sepultá-lo, dispensou-lhe cuidados ao perceber que ainda estava com vida.
 
 Refeito, Sebastião volta ao imperador e o recrimina por suas crueldades. Novamente é preso e condenado a morrer entre tormentos de pauladas e boladas de chumbo, no ano 303. Além de ser militar por vocação e profissão, também o foi como cristão. Revestiu-se da coragem para defender a fé, e da justiça para proteger os mais fracos. Não teve medo de dizer a verdade, mesmo aos grandes. Aparece por isso como o verdadeiro soldado de Cristo.
