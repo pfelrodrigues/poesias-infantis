@@ -1,0 +1,329 @@
+id: a-vida-dos-santos
+version: 0.1.0
+title: A vida dos Santos
+author: Avó da Talita
+language: pt
+year: 2026
+license: Leitura gratuita. Sem venda.
+repository_url: https://github.com/pfelrodrigues/books
+policy:
+  original_statuses:
+  - collated
+  editorial_statuses:
+  - draft
+  editorial_pieces:
+  - colofao
+  expected_original_count: 61
+pieces:
+- id: sao-sebastiao
+  title: "São Sebastião, 20 de janeiro"
+  file: text/sao-sebastiao.md
+  kind: prose
+  original: true
+- id: santa-ines
+  title: "Santa Inês, 21 de janeiro"
+  file: text/santa-ines.md
+  kind: prose
+  original: true
+- id: sao-vicente-pallotti
+  title: "São Vicente Pallotti, 22 de janeiro"
+  file: text/sao-vicente-pallotti.md
+  kind: prose
+  original: true
+- id: santos-timoteo-e-tito
+  title: "Santos Timóteo e Tito, 26 de janeiro"
+  file: text/santos-timoteo-e-tito.md
+  kind: prose
+  original: true
+- id: sao-joao-bosco
+  title: "São João Bosco, 31 de janeiro"
+  file: text/sao-joao-bosco.md
+  kind: prose
+  original: true
+- id: sao-bras
+  title: "São Brás, 3 de fevereiro"
+  file: text/sao-bras.md
+  kind: prose
+  original: true
+- id: nossa-senhora-de-lourdes
+  title: "Nossa Senhora de Lourdes, 11 de fevereiro"
+  file: text/nossa-senhora-de-lourdes.md
+  kind: prose
+  original: true
+- id: santa-eulalia
+  title: "Santa Eulália, 12 de fevereiro"
+  file: text/santa-eulalia.md
+  kind: prose
+  original: true
+- id: santos-cirilo-e-metodio
+  title: "Santos Cirilo e Metódio, 14 de fevereiro"
+  file: text/santos-cirilo-e-metodio.md
+  kind: prose
+  original: true
+- id: sao-policarpo
+  title: "São Policarpo, 23 de fevereiro"
+  file: text/sao-policarpo.md
+  kind: prose
+  original: true
+- id: sao-casimiro
+  title: "São Casimiro, 4 de março"
+  file: text/sao-casimiro.md
+  kind: prose
+  original: true
+- id: sao-joao-de-deus
+  title: "São João de Deus, 8 de março"
+  file: text/sao-joao-de-deus.md
+  kind: prose
+  original: true
+- id: sao-jose-padroeiro-da-igreja
+  title: "São José, padroeiro da Igreja, 19 de março"
+  file: text/sao-jose-padroeiro-da-igreja.md
+  kind: prose
+  original: true
+- id: sao-turibio-de-mongrovejo
+  title: "São Turíbio de Mongrovejo, 23 de março"
+  file: text/sao-turibio-de-mongrovejo.md
+  kind: prose
+  original: true
+- id: sao-joao-batista-de-la-salle
+  title: "São João Batista de La Salle, 7 de abril"
+  file: text/sao-joao-batista-de-la-salle.md
+  kind: prose
+  original: true
+- id: sao-jorge
+  title: "São Jorge, 23 de abril"
+  file: text/sao-jorge.md
+  kind: prose
+  original: true
+- id: sao-marcos
+  title: "São Marcos, 25 de abril"
+  file: text/sao-marcos.md
+  kind: prose
+  original: true
+- id: santa-catarina-de-sena
+  title: "Santa Catarina de Sena, 29 de abril"
+  file: text/santa-catarina-de-sena.md
+  kind: prose
+  original: true
+- id: sao-atanasio
+  title: "São Atanásio, 2 de maio"
+  file: text/sao-atanasio.md
+  kind: prose
+  original: true
+- id: sao-bernardino-de-sena
+  title: "São Bernardino de Sena, 20 de maio"
+  file: text/sao-bernardino-de-sena.md
+  kind: prose
+  original: true
+- id: santa-rita-de-cassia
+  title: "Santa Rita de Cássia, 22 de maio"
+  file: text/santa-rita-de-cassia.md
+  kind: prose
+  original: true
+- id: sao-bonifacio
+  title: "São Bonifácio, 5 de junho"
+  file: text/sao-bonifacio.md
+  kind: prose
+  original: true
+- id: santo-antonio
+  title: "Santo Antônio, 13 de junho"
+  file: text/santo-antonio.md
+  kind: prose
+  original: true
+- id: sao-luis-gonzaga
+  title: "São Luís Gonzaga, 21 de junho"
+  file: text/sao-luis-gonzaga.md
+  kind: prose
+  original: true
+- id: sao-joao-fisher-e-santo-tomas-more
+  title: "São João Fisher e Santo Tomás More, 22 de junho"
+  file: text/sao-joao-fisher-e-santo-tomas-more.md
+  kind: prose
+  original: true
+- id: natividade-de-joao-batista
+  title: "Natividade de João Batista, 24 de junho"
+  file: text/natividade-de-joao-batista.md
+  kind: prose
+  original: true
+- id: sao-pedro-e-sao-paulo
+  title: "São Pedro e São Paulo, 29 de junho"
+  file: text/sao-pedro-e-sao-paulo.md
+  kind: prose
+  original: true
+- id: santa-isabel-de-portugal
+  title: "Santa Isabel de Portugal, 4 de julho"
+  file: text/santa-isabel-de-portugal.md
+  kind: prose
+  original: true
+- id: santa-maria-goretti
+  title: "Santa Maria Goretti, 6 de julho"
+  file: text/santa-maria-goretti.md
+  kind: prose
+  original: true
+- id: sao-camilo-de-lelis
+  title: "São Camilo de Lélis, 14 de julho"
+  file: text/sao-camilo-de-lelis.md
+  kind: prose
+  original: true
+- id: sant-ana-e-sao-joaquim
+  title: "Sant'Ana e São Joaquim, 26 de julho"
+  file: text/sant-ana-e-sao-joaquim.md
+  kind: prose
+  original: true
+- id: santo-inacio-de-loiola
+  title: "Santo Inácio de Loiola, 31 de julho"
+  file: text/santo-inacio-de-loiola.md
+  kind: prose
+  original: true
+- id: sao-joao-maria-vianney
+  title: "São João Maria Vianney, 4 de agosto"
+  file: text/sao-joao-maria-vianney.md
+  kind: prose
+  original: true
+- id: sao-domingos
+  title: "São Domingos, 8 de agosto"
+  file: text/sao-domingos.md
+  kind: prose
+  original: true
+- id: santa-clara
+  title: "Santa Clara, 11 de agosto"
+  file: text/santa-clara.md
+  kind: prose
+  original: true
+- id: sao-maximiliano-kolbe
+  title: "São Maximiliano Kolbe, 14 de agosto"
+  file: text/sao-maximiliano-kolbe.md
+  kind: prose
+  original: true
+- id: sao-bartolomeu
+  title: "São Bartolomeu, 24 de agosto"
+  file: text/sao-bartolomeu.md
+  kind: prose
+  original: true
+- id: sao-luis-rei-de-franca
+  title: "São Luís, rei de França, 25 de agosto"
+  file: text/sao-luis-rei-de-franca.md
+  kind: prose
+  original: true
+- id: santa-monica
+  title: "Santa Mônica, 27 de agosto"
+  file: text/santa-monica.md
+  kind: prose
+  original: true
+- id: sao-gregorio-magno
+  title: "São Gregório Magno, 3 de setembro"
+  file: text/sao-gregorio-magno.md
+  kind: prose
+  original: true
+- id: sao-pedro-claver
+  title: "São Pedro Claver, 9 de setembro"
+  file: text/sao-pedro-claver.md
+  kind: prose
+  original: true
+- id: sao-francisco-das-chagas
+  title: "São Francisco das Chagas, 17 de setembro"
+  file: text/sao-francisco-das-chagas.md
+  kind: prose
+  original: true
+- id: sao-cosme-e-sao-damiao
+  title: "São Cosme e São Damião, 26 de setembro"
+  file: text/sao-cosme-e-sao-damiao.md
+  kind: prose
+  original: true
+- id: sao-vicente-de-paulo
+  title: "São Vicente de Paulo, 27 de setembro"
+  file: text/sao-vicente-de-paulo.md
+  kind: prose
+  original: true
+- id: sao-jeronimo
+  title: "São Jerônimo, 30 de setembro"
+  file: text/sao-jeronimo.md
+  kind: prose
+  original: true
+- id: santa-teresinha-do-menino-jesus
+  title: "Santa Teresinha do Menino Jesus, 1 de outubro"
+  file: text/santa-teresinha-do-menino-jesus.md
+  kind: prose
+  original: true
+- id: sao-francisco-de-assis
+  title: "São Francisco de Assis, 4 de outubro"
+  file: text/sao-francisco-de-assis.md
+  kind: prose
+  original: true
+- id: nossa-senhora-aparecida
+  title: "Nossa Senhora Aparecida, 12 de outubro"
+  file: text/nossa-senhora-aparecida.md
+  kind: prose
+  original: true
+- id: santa-teresa-de-avila
+  title: "Santa Teresa de Ávila, 15 de outubro"
+  file: text/santa-teresa-de-avila.md
+  kind: prose
+  original: true
+- id: sao-geraldo-magela
+  title: "São Geraldo Magela, 16 de outubro"
+  file: text/sao-geraldo-magela.md
+  kind: prose
+  original: true
+- id: santa-hedviges
+  title: "Santa Hedviges, 16 de outubro"
+  file: text/santa-hedviges.md
+  kind: prose
+  original: true
+- id: sao-lucas
+  title: "São Lucas, 18 de outubro"
+  file: text/sao-lucas.md
+  kind: prose
+  original: true
+- id: santa-isabel-da-hungria
+  title: "Santa Isabel da Hungria, 17 de novembro"
+  file: text/santa-isabel-da-hungria.md
+  kind: prose
+  original: true
+- id: santa-cecilia
+  title: "Santa Cecília, 22 de novembro"
+  file: text/santa-cecilia.md
+  kind: prose
+  original: true
+- id: santo-andre
+  title: "Santo André, 30 de novembro"
+  file: text/santo-andre.md
+  kind: prose
+  original: true
+- id: santo-ambrosio
+  title: "Santo Ambrósio, 7 de dezembro"
+  file: text/santo-ambrosio.md
+  kind: prose
+  original: true
+- id: imaculada-conceicao
+  title: "Imaculada Conceição, 8 de dezembro"
+  file: text/imaculada-conceicao.md
+  kind: prose
+  original: true
+- id: santa-luzia
+  title: "Santa Luzia, 13 de dezembro"
+  file: text/santa-luzia.md
+  kind: prose
+  original: true
+- id: sao-joao-da-cruz
+  title: "São João da Cruz, 14 de dezembro"
+  file: text/sao-joao-da-cruz.md
+  kind: prose
+  original: true
+- id: santo-estevao
+  title: "Santo Estêvão, 26 de dezembro"
+  file: text/santo-estevao.md
+  kind: prose
+  original: true
+- id: sao-joao-evangelista
+  title: "São João Evangelista, 27 de dezembro"
+  file: text/sao-joao-evangelista.md
+  kind: prose
+  original: true
+- id: colofao
+  title: Colofão
+  file: text/colofao.md
+  kind: prose
+  original: false
+  translations:
+    en: text/colofao.en.md
