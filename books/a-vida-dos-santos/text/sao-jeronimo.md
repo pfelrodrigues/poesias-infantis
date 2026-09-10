@@ -6,6 +6,8 @@ status: collated
 
 # São Jerônimo, 30 de setembro
 
+![São Jerônimo, 30 de setembro](../images/saints/sao-jeronimo.jpg)
+
 ### O homem da Sagrada Escritura
 
 Jerônimo nasceu na Dalmácia, na primeira metade do século IV. Estudou em Roma, onde também foi batizado. Viajou para o Oriente, estagiando um tempo entre os monges. Foi ordenado sacerdote em Antioquia e de lá foi a Bizâncio e, por fim, chamado a Roma pelo papa Dâmaso, que lhe confiou a tradução da Bíblia para o latim, já que conhecia grego, hebraico e latim.

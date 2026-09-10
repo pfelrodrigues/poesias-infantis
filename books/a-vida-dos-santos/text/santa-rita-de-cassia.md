@@ -6,6 +6,8 @@ status: collated
 
 # Santa Rita de Cássia, 22 de maio
 
+![Santa Rita de Cássia, 22 de maio](../images/saints/santa-rita-de-cassia.jpg)
+
 ### Esposa, mãe e religiosa
 
 Nasceu Rita, em 1381, perto de Cássia, nas terras da Úmbria, Itália. Escolheu a vida de casada, mas o marido foi um verdadeiro tirano: aventureiro e mulherengo, violento em casa e grosseiro no trato. Sua paciência, oração e bondade acabaram por domar a fera, mas foi assassinado. Ficaram dois filhos que herdaram os traços fundamentais do pai.

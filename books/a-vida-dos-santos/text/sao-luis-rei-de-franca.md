@@ -6,6 +6,8 @@ status: collated
 
 # São Luís, rei de França, 25 de agosto
 
+![São Luís, rei de França, 25 de agosto](../images/saints/sao-luis-rei-de-franca.jpg)
+
 Um mês após a morte de São Francisco de Assis (1226) um garoto de doze anos ocupava o trono da França. Era Luís IX. Como um rei na Ordem Terceira de São Francisco, o espírito evangélico iria animar a vida de um chefe de Estado cristão. A missão de Luís foi de apresentar a todos o exemplo de um leigo que trabalhava pelo Reino de Deus no coração das tarefas seculares. Foi cristão exemplar em sua vida de oração, no amor que dedicava aos pobres e na vida de mortificação. Sua esposa tinha dificuldades em seguir a mesma vida cristã, desde que foi pai exemplar de onze filhos. A história diz que Luís foi rei justo. Empreendeu cruzadas na Terra Santa a fim de libertar os lugares santos das mãos daqueles que queriam destruir ou se apoderar das terras onde vivera Cristo Jesus. Os franciscanos da Ordem Terceira têm em São Luís seu principal padroeiro. Que esse exemplo de leigo cristão inspire muitas vocações evangélicas também em nossos dias.
 
 ### Testamento de São Luís, 25 de agosto

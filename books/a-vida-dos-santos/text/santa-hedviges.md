@@ -6,6 +6,8 @@ status: collated
 
 # Santa Hedviges, 16 de outubro
 
+![Santa Hedviges, 16 de outubro](../images/saints/santa-hedviges.jpg)
+
 ### Esposa, viúva e freira
 
 Hedviges nasceu, na Baviera, de família nobre, em 1174. Já aos 12 anos foi dada em matrimônio ao duque da Silésia e Polônia. Depois de seis filhos fizeram o voto de castidade. Muito sofreu porque perdeu vários filhos ainda crianças, viu o esposo preso e o perdeu pouco depois. Dedicou-se ao bem de seus súditos com obras de caridade e dedicou-se à construção de mosteiros, entre eles o de Trebnitz, onde entrou uma sua filha e, mais tarde, ela mesma.
