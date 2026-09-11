@@ -12,6 +12,8 @@ As 61 peças originais estão em `collated`. A revisão `proofed` da família ai
 
 O manuscrito diplomático não está neste repositório.
 
+O `make book` da coleção gera o EPUB e o PDF A5. As gravuras entram no quadro 3:4.
+
 ## Arquivos
 
 | Caminho | Conteúdo |

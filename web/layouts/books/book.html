@@ -15,6 +15,7 @@
     <div class="book-actions">
       {{ with index .pieces 0 }}<a href="{{ partial "books/path.html" (dict "page" $page "bookID" $book.id "reader" true "pieceID" .id) }}">{{ i18n "books_start" }}</a>{{ end }}
       {{ with .epub }}<a href="{{ partial "books/asset.html" (dict "book" $book "src" .) }}" download>{{ i18n "books_download" }}</a>{{ end }}
+      {{ with .pdf }}<a href="{{ partial "books/asset.html" (dict "book" $book "src" .) }}" download>{{ i18n "books_download_pdf" }}</a>{{ end }}
       {{ partial "books/resume.html" (dict "page" $page "book" $book) }}
     </div>
   </div>

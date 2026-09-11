@@ -1,6 +1,6 @@
 # Books
 
-Coleção de livros antigos remasterizados para leitura no navegador e em EPUB.
+Coleção de livros antigos remasterizados para leitura no navegador, em EPUB e, quando o manifesto pede, em PDF.
 Biblioteca, leitor, fontes editoriais e geradores ficam neste repositório.
 
 O endereço público previsto é [pfelrodrigues.com.br/books/](https://pfelrodrigues.com.br/books/).
@@ -42,6 +42,7 @@ mise exec -- make book
 ```
 
 `make book` encontra todos os manifestos `books/*/book.yml`. Valida fontes e apresentações, gera HTML e EPUB da mesma estrutura do Pandoc e monta o site bilíngue.
+Se o manifesto tem `pdf: true`, o mesmo export grava um PDF A5 ao lado do EPUB.
 Verifica links, recursos, âncoras, canonical e hreflang antes de substituir `site/`.
 Uma falha preserva a última publicação gerada.
 
@@ -55,7 +56,7 @@ mise exec -- make export BOOK=poesias-infantis OUTPUT=build/poesias-infantis/0.2
 ```
 
 A saída precisa ser uma pasta nova. `--source` e `--output` também podem ser passados diretamente a `scripts/export_book.py`.
-O pacote contém `book.json`, HTML por peça, imagens WebP, EPUB com imagens JPEG e mapa opcional de fragmentos legados.
+O pacote contém `book.json`, HTML por peça, imagens WebP, EPUB com imagens JPEG, PDF A5 quando pedido, e mapa opcional de fragmentos legados.
 Cada arquivo tem SHA-256. `source_commit`, `source_dirty` e `source_sha256` identificam a revisão e suas entradas.
 
 ## Acrescentar uma obra

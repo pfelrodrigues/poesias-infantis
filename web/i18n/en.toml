@@ -64,6 +64,9 @@ other = "Start reading"
 [books_download]
 other = "Download EPUB"
 
+[books_download_pdf]
+other = "Download PDF"
+
 [books_details]
 other = "Book details"
 

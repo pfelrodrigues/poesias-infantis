@@ -106,6 +106,8 @@ class Book:
                 raise ExportError(f"Metadata {field} must be text")
         if "year" in self.meta and type(self.meta["year"]) is not int:
             raise ExportError("Metadata year must be an integer")
+        if "pdf" in self.meta and type(self.meta["pdf"]) is not bool:
+            raise ExportError("Metadata pdf must be a boolean")
         self.css = (
             self.path(self.meta["epub_css"], "stylesheet")
             if self.meta.get("epub_css")
@@ -257,6 +259,11 @@ class Book:
             if not isinstance(max_width, int) or not 100 <= max_width <= 4000:
                 raise ExportError("web_images.max_width must be 100..4000")
             scale = min(1, max_width / image.width)
+            max_height = self.meta.get("web_images", {}).get("max_height")
+            if max_height is not None:
+                if not isinstance(max_height, int) or not 100 <= max_height <= 4000:
+                    raise ExportError("web_images.max_height must be 100..4000")
+                scale = min(scale, max_height / image.height)
             width, height = round(image.width * scale), round(image.height * scale)
         record = {"src": f"images/{name}.webp", "width": width, "height": height}
         self.images[path] = record
@@ -535,6 +542,12 @@ class Book:
                 args.append("--css=" + str(self.css))
             env = {**os.environ, "SOURCE_DATE_EPOCH": "0"}
             pandoc(json.dumps(self.epub_ast()), *args, cwd=resources, env=env)
+        if self.meta.get("pdf") is True:
+            from export_pdf import write_pdf
+
+            pdf_name = self.meta["id"] + ".pdf"
+            write_pdf(self, output / pdf_name)
+            manifest["pdf"] = pdf_name
         manifest["files"] = {
             p.relative_to(output).as_posix(): sha256(p)
             for p in sorted(output.rglob("*"))

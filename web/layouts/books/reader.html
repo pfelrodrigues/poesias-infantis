@@ -29,7 +29,7 @@
 <div class="body">
   <article aria-labelledby="piece-title">
     <h3 class="poem-name" id="piece-title" lang="{{ $contentLanguage }}">{{ $pieceTitle }}</h3>
-    <div class="reading-content" id="reading-content" lang="{{ $contentLanguage }}">
+    <div class="reading-content" id="reading-content" lang="{{ $contentLanguage }}" data-book="{{ $book.id }}">
       {{- $imageLink := printf `<a class="image-link reading-image" href="$2" aria-label="%s"><img${1}src="$2"${3}></a>` (i18n "books_enlarge_image") -}}
       {{- replaceRE `<img([^>]*?)src="([^"]+)"([^>]*?)>` $imageLink $content | safeHTML -}}
     </div>

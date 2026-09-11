@@ -6,6 +6,7 @@ build/
 site/
 books/*/scans/
 books/*/images/pages/
+books/*/images/download-state.json
 books/*/facsimile/ocr-dump.txt
 web/.generated/
 web/.generated-*/

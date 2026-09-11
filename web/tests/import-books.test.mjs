@@ -84,6 +84,16 @@ test('rejects undeclared image resources even when chapter checksum is valid', a
   await assert.rejects(importBooks({ root }), /resource|recurso/i);
 });
 
+test('copies optional pdf next to the epub', async t => {
+  const { root } = await fixture(t, (book, files) => {
+    files['amostra.pdf'] = 'test-pdf';
+    book.pdf = 'amostra.pdf';
+    book.files['amostra.pdf'] = digest('test-pdf');
+  });
+  await importBooks({ root });
+  assert.equal(await readFile(join(root, '.generated/static/books/assets/amostra/1.0.0/amostra.pdf'), 'utf8'), 'test-pdf');
+});
+
 test('imports another book using metadata without changing site code', async t => {
   const { root } = await fixture(t, book => { book.id = 'prosa'; book.title = 'Livro em prosa'; });
   await importBooks({ root });

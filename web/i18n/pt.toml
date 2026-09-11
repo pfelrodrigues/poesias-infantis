@@ -64,6 +64,9 @@ other = "Começar a ler"
 [books_download]
 other = "Baixar EPUB"
 
+[books_download_pdf]
+other = "Baixar PDF"
+
 [books_details]
 other = "Ficha"
 

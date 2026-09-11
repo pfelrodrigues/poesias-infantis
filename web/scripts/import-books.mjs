@@ -67,7 +67,7 @@ async function loadBook(root, entry) {
   const files = new Map();
   for (const [path, hash] of Object.entries(book.files)) {
     safePath(path);
-    if (!/^(?:chapters\/[a-z0-9.-]+\.html|images\/[a-z0-9.-]+\.(?:webp|png|jpe?g)|[a-z0-9.-]+\.(?:epub|json))$/.test(path)) throw new Error(`Unsupported or executable package file: ${path}`);
+    if (!/^(?:chapters\/[a-z0-9.-]+\.html|images\/[a-z0-9.-]+\.(?:webp|png|jpe?g)|[a-z0-9.-]+\.(?:epub|pdf|json))$/.test(path)) throw new Error(`Unsupported or executable package file: ${path}`);
     if (!HASH.test(hash)) throw new Error(`Invalid file checksum: ${path}`);
     const full = await confinedFile(directory, path);
     const bytes = await readFile(full);
@@ -76,6 +76,7 @@ async function loadBook(root, entry) {
   }
   book.assetBase = `/books/assets/${book.id}/${book.version}/`;
   requireResource(book, book.epub);
+  if (book.pdf) requireResource(book, book.pdf);
   for (const picture of [book.cover, book.comparison?.original, book.comparison?.restored].filter(Boolean)) {
     requireResource(book, picture.src);
     if (!(picture.width > 0 && picture.height > 0)) throw new Error('Image dimensions required');

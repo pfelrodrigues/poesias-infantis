@@ -262,6 +262,38 @@ class ExportContract(unittest.TestCase):
         self.manifest["publisher"] = {"unexpected": "mapping"}
         self.assert_fails("publisher")
 
+    def test_pdf_flag_must_be_boolean(self) -> None:
+        self.manifest["pdf"] = "yes"
+        self.assert_fails("pdf")
+
+    def test_pdf_flag_writes_a5_next_to_epub(self) -> None:
+        import pymupdf
+
+        self.manifest["pdf"] = True
+        path = self.source / "text/first.md"
+        path.write_text(self.first.rstrip() + "\n\nVer `credits.json`.\n")
+        result = self.run_export()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        manifest = json.loads((self.output / "book.json").read_text())
+        self.assertEqual(manifest["pdf"], "small-prose.pdf")
+        pdf_path = self.output / manifest["pdf"]
+        self.assertTrue(pdf_path.is_file())
+        self.assertEqual(
+            manifest["files"]["small-prose.pdf"],
+            hashlib.sha256(pdf_path.read_bytes()).hexdigest(),
+        )
+        with pymupdf.open(pdf_path) as doc:
+            self.assertGreaterEqual(doc.page_count, 3)
+            a5 = pymupdf.paper_rect("A5")
+            self.assertAlmostEqual(doc[0].rect.width, a5.width, places=1)
+            self.assertAlmostEqual(doc[0].rect.height, a5.height, places=1)
+            text = "\n".join(page.get_text() for page in doc)
+            self.assertIn("Livro de prosa", text)
+            self.assertIn("Outro auctor", text)
+            self.assertIn("Primeiro capítulo", text)
+            self.assertIn("Uma historia d'outro tempo", text)
+            self.assertIn("credits.json", text)
+
     def test_original_translation_is_rejected(self) -> None:
         self.manifest["pieces"][0]["translations"] = {"en": "text/second.md"}
         self.assert_fails("translations of original")

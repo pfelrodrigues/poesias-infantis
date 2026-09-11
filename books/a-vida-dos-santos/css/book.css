@@ -1,0 +1,94 @@
+:root {
+  --paper: #f3eddf;
+  --ink: #302b23;
+  --muted: #6b6255;
+  --accent: #966019;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 36rem;
+  padding: 1.5rem 1.1rem 3rem;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Palatino, "Palatino Linotype", "Iowan Old Style", "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+header.site p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+header.site .work {
+  color: var(--ink);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0.2rem 0 0.5rem;
+}
+
+main img {
+  display: block;
+  width: 42%;
+  max-width: 11rem;
+  height: auto;
+  margin: 0.8rem auto 1.1rem;
+}
+
+article h1,
+main h1 {
+  text-align: center;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  font-size: 1.2rem;
+  margin: 1.6rem 0 0.8rem;
+}
+
+main h2,
+main h3 {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.4rem 0 0.7rem;
+}
+
+nav#TOC {
+  margin: 0 0 1.4rem;
+  padding: 0.6rem 0 1rem;
+  border-bottom: 1px solid #ded5c4;
+}
+
+nav#TOC ul {
+  list-style: none;
+  padding: 0;
+  columns: 2;
+  gap: 1rem;
+}
+
+nav#TOC a {
+  color: var(--ink);
+}
+
+main p {
+  margin: 0 0 0.9rem;
+  text-align: justify;
+}
+
+footer {
+  margin-top: 2rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid #ded5c4;
+  color: var(--muted);
+  font-size: 0.9rem;
+}

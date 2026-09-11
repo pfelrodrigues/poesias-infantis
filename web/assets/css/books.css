@@ -56,6 +56,8 @@
 .reading-content h2,.reading-content h3{font:600 1em/1.6 "IBM Plex Mono",monospace;color:var(--ink);letter-spacing:0;margin:2.2em 0 1.3em}
 .reading-content img{display:block;max-width:100%;height:auto;margin:0 auto}
 .reading-content .reading-image{margin:0 0 2rem}
+.reading-content[data-book=a-vida-dos-santos] .reading-image{max-width:11rem;margin:0 auto 1.3rem}
+.reading-content[data-book=a-vida-dos-santos] img{max-width:11rem;max-height:14.5rem;width:auto;height:auto;object-fit:contain}
 .reading-content figure{margin:0 0 2rem}
 .reading-content figcaption{font:400 .72rem/1.7 "IBM Plex Mono",monospace;color:var(--graphite);margin-top:.6rem}
 .reading-content blockquote{margin:1.5em 0;padding-left:2ch;border-left:1px solid var(--rule)}

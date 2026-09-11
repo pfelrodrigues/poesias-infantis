@@ -1,4 +1,4 @@
-.PHONY: all extract crop html epub book export test clean
+.PHONY: all extract crop html epub pdf book export test clean
 
 BOOK ?= poesias-infantis
 SOURCE ?= books/$(BOOK)/book.yml
@@ -24,6 +24,7 @@ test:
 
 html: book
 epub: book
+pdf: book
 
 clean:
 	rm -rf build site web/.editions web/.generated web/resources web/data/books.lock.json
